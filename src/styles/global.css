@@ -1,3 +1,21 @@
 /*
   Add more custom css here
  */
+.layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.header {
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 20;
+}
+
+.main {
+	min-height: 100%;
+	overflow-x: hidden;
+}

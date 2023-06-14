@@ -1,0 +1,91 @@
+---
+import AppLogo from "~/components/parts/AppLogo.astro";
+
+const menuLinks = [
+    {
+        name: "Home",
+        link: "/",
+        value: "",
+    },
+    {
+        name: "Blog",
+        link: "/blog",
+        value: "blog",
+    },
+    {
+        name: "About",
+        link: "/about",
+        value: "about",
+    },
+];
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+
+console.log(currentPath, "currentPath");
+---
+
+<header class="header">
+    <div class="drawer">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+            <!-- Navbar -->
+            <div class="w-full navbar bg-primary">
+                <div class="container mx-auto">
+                    <div class="flex-none lg:hidden">
+                        <label
+                            for="my-drawer-3"
+                            class="btn btn-square btn-ghost"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                class="inline-block w-6 h-6 stroke-current"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path></svg
+                            >
+                        </label>
+                    </div>
+                    <div class="flex-1 px-2 mx-2 normal-case text-xl">
+                        <AppLogo />
+                    </div>
+                    <div class="flex-none hidden lg:block">
+                        <ul
+                            class="menu menu-horizontal bg-secondary text-black font-bold rounded-xl border-2 border-base-content"
+                        >
+                            {
+                                menuLinks.map((link) => (
+                                    <li
+                                        class={
+                                            currentPath === link.value
+                                                ? "rounded-xl hover:bg-accent bg-accent border-2 border-base-content"
+                                                : ""
+                                        }
+                                    >
+                                        <a href={link.link}>{link.name}</a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="drawer-side">
+            <label for="my-drawer-3" class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 h-full bg-base-200">
+                {
+                    menuLinks.map((link) => (
+                        <li>
+                            <a href="{{ link.link }}">{link.name}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+</header>
