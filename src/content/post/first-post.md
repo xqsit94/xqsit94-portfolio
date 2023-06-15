@@ -3,6 +3,7 @@ title: 'First post'
 category: 'Post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
+updatedDate: 'Jun 15 2023'
 heroImage: '/placeholder-hero.jpg'
 ---
 
