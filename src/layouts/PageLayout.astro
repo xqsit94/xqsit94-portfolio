@@ -13,10 +13,8 @@ const { meta } = Astro.props;
 
 <BaseLayout {meta}>
   <AppHeader />
-  <main class="main">
-    <div class="container mx-auto">
-      <slot />
-    </div>
+  <main class="main mt-28 mb-10">
+    <slot />
   </main>
   <AppFooter />
 </BaseLayout>

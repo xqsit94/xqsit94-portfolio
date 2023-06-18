@@ -2,27 +2,31 @@
 import Layout from '~/layouts/Default.astro';
 import PostCard from '~/components/blogs/PostCard.astro';
 import type { GetStaticPathsOptions } from 'astro';
-import { BLOG } from '~/config.mjs';
+import { BLOG, SITE } from '~/config.mjs';
 import { fetchPosts } from '~/utils/blog';
 import { BLOG_BASE } from '~/utils/permalinks';
 import Pagination from '~/components/blogs/Pagination.astro';
-
-console.log(BLOG_BASE, 'BLOG');
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   if (BLOG?.disabled || BLOG?.list?.disabled) return [];
   return paginate(await fetchPosts(), {
     params: { blog: BLOG_BASE || 'blog' },
-    // pageSize: BLOG.postsPerPage,
-    pageSize: 2,
+    pageSize: BLOG.postsPerPage,
   });
 }
 
 const { page } = Astro.props;
 const currentPage = page.currentPage ?? 1;
+
+const meta = {
+  title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  description: SITE.description,
+  noindex: BLOG?.list?.noindex || currentPage > 1,
+  ogType: 'blog',
+};
 ---
 
-<Layout>
+<Layout {meta}>
   <section class="flex relative">
     <div class="container mx-auto">
       <div class="flex flex-wrap justify-center -mx-4 mt-28 mb-5">
