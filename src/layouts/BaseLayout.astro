@@ -1,0 +1,19 @@
+---
+import BaseHead from '~/components/BaseHead.astro';
+import AppHeader from '~/components/parts/AppHeader.astro';
+import AppFooter from '~/components/parts/AppFooter.astro';
+
+const { meta = {} } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <BaseHead {...meta} />
+  </head>
+  <body>
+    <div class="layout">
+      <slot />
+    </div>
+  </body>
+</html>

@@ -1,24 +1,16 @@
 ---
-import BaseHead from '~/components/BaseHead.astro';
+import BaseLayout from '~/layouts/BaseLayout.astro';
 import AppHeader from '~/components/parts/AppHeader.astro';
 import AppFooter from '~/components/parts/AppFooter.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <div class="layout">
-      <AppHeader />
-      <main class="main">
-        <div class="container mx-auto">
-          <slot />
-        </div>
-      </main>
-      <AppFooter />
+<BaseLayout>
+  <AppHeader />
+  <main class="main">
+    <div class="container mx-auto">
+      <slot />
     </div>
-  </body>
-</html>
+  </main>
+  <AppFooter />
+</BaseLayout>

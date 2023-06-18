@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/Default.astro';
+import PostCard from '~/components/blogs/PostCard.astro';
+import type { GetStaticPathsOptions } from 'astro';
+import { BLOG } from '~/config.mjs';
+import { fetchPosts } from '~/utils/blog';
+import { BLOG_BASE } from '~/utils/permalinks';
+import Pagination from '~/components/blogs/Pagination.astro';
+
+console.log(BLOG_BASE, 'BLOG');
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  if (BLOG?.disabled || BLOG?.list?.disabled) return [];
+  return paginate(await fetchPosts(), {
+    params: { blog: BLOG_BASE || 'blog' },
+    // pageSize: BLOG.postsPerPage,
+    pageSize: 2,
+  });
+}
+
+const { page } = Astro.props;
+const currentPage = page.currentPage ?? 1;
+---
+
+<Layout>
+  <section class="flex relative">
+    <div class="container mx-auto">
+      <div class="flex flex-wrap justify-center -mx-4 mt-28 mb-5">
+        <h1 class="text-5xl font-bold uppercase">My Blog</h1>
+      </div>
+    </div>
+  </section>
+  <section class="p-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center">
+      {
+        page.data.map((post) => (
+          <PostCard
+            category={post.category}
+            title={post.title}
+            description={post.description}
+            date={post.pubDate}
+            image={post.heroImage}
+            slug={post.slug}
+          />
+        ))
+      }
+    </div>
+  </section>
+  <section class="p-5">
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </section>
+</Layout>
