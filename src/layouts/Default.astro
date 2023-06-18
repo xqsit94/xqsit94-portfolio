@@ -1,0 +1,22 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import AppHeader from '~/components/parts/AppHeader.astro';
+import AppFooter from '~/components/parts/AppFooter.astro';
+import type { MetaSEO } from '~/types';
+
+export interface Props {
+  meta?: MetaSEO;
+}
+
+const { meta } = Astro.props;
+---
+
+<BaseLayout {meta}>
+  <AppHeader />
+  <main class="main">
+    <div class="container mx-auto">
+      <slot />
+    </div>
+  </main>
+  <AppFooter />
+</BaseLayout>

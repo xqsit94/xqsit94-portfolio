@@ -1,0 +1,68 @@
+---
+import Layout from '~/layouts/Default.astro';
+import PostCard from '~/components/blogs/PostCard.astro';
+import type { GetStaticPathsOptions } from 'astro';
+import { BLOG, SITE } from '~/config.mjs';
+import { fetchPosts } from '~/utils/blog';
+import Pagination from '~/components/blogs/Pagination.astro';
+import { TAG_BASE } from '~/utils/permalinks';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  if (BLOG?.disabled || BLOG?.list?.disabled) return [];
+
+  const posts = await fetchPosts();
+  const tags = new Set();
+  posts.map((post) => {
+    Array.isArray(post.tags) && post.tags.map((tag) => tags.add(tag.toLowerCase()));
+  });
+
+  return Array.from(tags).map((tag: string) =>
+    paginate(
+      posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.toLowerCase() === tag)),
+      {
+        params: { tag: tag, blog: TAG_BASE || undefined },
+        pageSize: BLOG.postsPerPage,
+        props: { tag },
+      }
+    )
+  );
+}
+
+const { page, tag } = Astro.props;
+const currentPage = page.currentPage ?? 1;
+
+const meta = {
+  title: `Posts by tag '${tag}'${currentPage > 1 ? ` — Page ${currentPage} ` : ''}`,
+  description: SITE.description,
+  noindex: BLOG?.tag?.noindex,
+};
+---
+
+<Layout {meta}>
+  <section class="flex relative">
+    <div class="container mx-auto">
+      <div class="flex flex-wrap justify-center -mx-4 mt-28 mb-5">
+        <h1 class="text-5xl font-bold uppercase">Tag: {tag}</h1>
+      </div>
+    </div>
+  </section>
+  <section class="p-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center">
+      {
+        page.data.map((post) => (
+          <PostCard
+            category={post.category}
+            title={post.title}
+            description={post.description}
+            date={post.pubDate}
+            image={post.heroImage}
+            slug={post.slug}
+          />
+        ))
+      }
+    </div>
+  </section>
+  <section class="p-5">
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </section>
+</Layout>
