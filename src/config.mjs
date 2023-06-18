@@ -1,15 +1,16 @@
 export const SITE = {
-  title: 'My personal website.',
-  description: 'Welcome to my website!',
+  title: 'lifeofdev',
+  description:
+    'LIFEOFDEV is a web development blog where I share my journey as a software engineer. Join me as I document my experiences, insights, and lessons learned while working with Laravel, Vue.js, Node.js, and more.',
 
-  origin: 'http://localhost:3000',
+  origin: 'https://lifeofdev.com',
   basePathname: '/',
   trailingSlash: false,
 };
 
 export const BLOG = {
   disabled: false,
-  postsPerPage: 4,
+  postsPerPage: 6,
 
   googleSiteVerificationId: 'google-site-verification-code',
   googleAnalyticsId: 'google-analytics-id',
