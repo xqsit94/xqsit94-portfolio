@@ -1,7 +1,9 @@
 # LIFEOFDEV
+
 My Personal blog built with Astro.js, DaisyUI, Tailwindcss.
 
 ## Features
+
 - [x] Markdown Parser (for creating post and pages)
 - [x] support for mdx
 - [x] Blog Posts
@@ -17,7 +19,8 @@ My Personal blog built with Astro.js, DaisyUI, Tailwindcss.
 - and more in future.
 
 ## Todo
- - Frontpage design
- - Approximate read time for posts
- - Related Post
- - Archive Post
+
+- Frontpage design
+- Approximate read time for posts
+- Related Post
+- Archive Post

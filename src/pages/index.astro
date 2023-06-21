@@ -3,23 +3,28 @@ import Layout from '~/layouts/Default.astro';
 ---
 
 <Layout>
-  <section class="h-screen flex align-center justify-center items-center relative">
+  <section class="h-screen flex justify-center items-center">
     <div class="hero-content">
-      <div class="flex flex-col md:flex-row justify-between">
-        <div class="w-full md:w-1/2">
+      <div class="flex md:flex-row flex-col-reverse justify-between">
+        <div class="text-center lg:text-left w-full lg:w-2/4">
           <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold">
             Hi 👋 I'm<div class="block md:inline-block pl-2 lg:pl-0 text-accent">Manikandan.</div>
           </h1>
-          <p class="py-2 md:py-6 text-2xl xl:text-[2rem] xl:leading-[54px] tracking-[-0.3px]">
+          <p class="pt-2 md:pt-6 text-2xl xl:text-[2rem] xl:leading-[54px] tracking-[-0.3px]">
             <span id="element"></span>
           </p>
-          <p class="py-2 md:py-6 text-2xl xl:text-[2rem] xl:leading-[54px] tracking-[-0.3px]">
+          <p class="text-2xl xl:text-[2rem] xl:leading-[54px] tracking-[-0.3px]">
             with a passion for crafting exceptional web experience.
           </p>
+          <div class="mt-10 flex md:flex-row flex-col gap-6">
+            <button class="btn btn-outline btn-accent btn-wide">Write Me</button>
+            <button class="btn btn-outline btn-info btn-wide">Resume</button>
+          </div>
         </div>
-        <div class="w-full md:w-1/2">
-          <!-- Placeholder Image -->
-          <img src="https://via.placeholder.com/500" alt="Placeholder Image" class="w-full" />
+        <div class="h-[40vh] lg:h-auto w-full lg:w-2/4">
+          <div id="image-element" class="h-full lg:w-[360px] 2xl:w-[600px] mx-auto">
+            <img id="img4" src="/svg/4.svg" alt="Placeholder Image" class="h-full mx-auto" />
+          </div>
         </div>
       </div>
     </div>
@@ -28,13 +33,14 @@ import Layout from '~/layouts/Default.astro';
 
 <script>
   import Typed from 'typed.js';
+  import { timeline } from 'motion';
 
-  const typed = new Typed('#element', {
+  new Typed('#element', {
     strings: [
-      'A full-stack web developer from India',
-      'A modern Vue.js developer',
-      'A modern Laravel developer',
-      'An awesome UI/UX designer',
+      `A full-stack web developer from India`,
+      `A modern <span class="text-error text-4xl">Vue.js</span> developer`,
+      `A modern <span class="text-info text-4xl">Laravel</span> developer`,
+      'An awesome <span class="text-accent text-4xl">UI/UX</span> designer',
     ],
     typeSpeed: 70,
     backSpeed: 50,
