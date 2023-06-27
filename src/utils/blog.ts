@@ -3,7 +3,12 @@ import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { cleanSlug, trimSlash, POST_PERMALINK_PATTERN } from '~/utils/permalinks';
 
-const generatePermalink = async ({ id, slug, pubDate, category }) => {
+const generatePermalink = async ({ id, slug, pubDate, category }: {
+  id: string;
+  slug: string;
+  pubDate: Date;
+  category?: string
+}) => {
   const year = String(pubDate.getFullYear()).padStart(4, '0');
   const month = String(pubDate.getMonth() + 1).padStart(2, '0');
   const day = String(pubDate.getDate()).padStart(2, '0');
@@ -117,23 +122,23 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const findTags = async (): Promise<Array<string>> => {
   const posts = await fetchPosts();
-  const tags = posts.reduce((acc, post: Post) => {
+  const tags = posts.reduce((acc: any, post: Post) => {
     if (post.tags && Array.isArray(post.tags)) {
       return [...acc, ...post.tags];
     }
     return acc;
   }, []);
-  return [...new Set(tags)];
+  return [...new Set(tags) as any];
 };
 
 /** */
 export const findCategories = async (): Promise<Array<string>> => {
   const posts = await fetchPosts();
-  const categories = posts.reduce((acc, post: Post) => {
+  const categories = posts.reduce((acc: any, post: Post) => {
     if (post.category) {
       return [...acc, post.category];
     }
     return acc;
   }, []);
-  return [...new Set(categories)];
+  return [...new Set(categories) as any];
 };

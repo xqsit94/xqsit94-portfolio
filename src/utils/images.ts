@@ -37,5 +37,6 @@ export const findImage = async (imagePath?: string) => {
     return null;
   }
 
+  // @ts-ignore
   return typeof images[key] === 'function' ? (await images[key]())['default'] : null;
 };
