@@ -21,12 +21,10 @@ const menuLinks = [
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
-
-console.log(currentPath, 'currentPath');
 ---
 
 <header class="header">
-  <div class="drawer">
+  <div class="drawer border-y-2 border-base-content">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
@@ -45,7 +43,9 @@ console.log(currentPath, 'currentPath');
             </label>
           </div>
           <div class="flex-1 px-2 mx-2 normal-case text-xl">
-            <AppLogo />
+            <a href="/">
+              <AppLogo />
+            </a>
           </div>
           <div class="flex-none hidden lg:block">
             <ul class="menu menu-horizontal bg-secondary text-black font-bold rounded-xl border-2 border-base-content">

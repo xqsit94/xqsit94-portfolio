@@ -63,9 +63,7 @@ const load = async function (): Promise<Array<Post>> {
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf())
     .filter((post) => !post.draft);
-
-  console.log(`Loaded ${results.length} posts`);
-
+  
   return results;
 };
 

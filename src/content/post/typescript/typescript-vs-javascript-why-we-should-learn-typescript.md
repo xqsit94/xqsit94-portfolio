@@ -4,7 +4,7 @@ category: 'Typescript'
 description: 'One of the main benefits of Typescript is its support for static typing. In Javascript, variables can be assigned any value, regardless of its data type.'
 pubDate: 'Jun 28 2023'
 updatedDate: 'Jun 28 2023'
-heroImage: '/placeholder-hero.jpg'
+heroImage: '/images/typescript/typescript-vs-javascript-why-we-should-learn-typescript.png'
 tags:
   - typescript
   - coding-basics
