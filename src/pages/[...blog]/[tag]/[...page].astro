@@ -16,7 +16,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     Array.isArray(post.tags) && post.tags.map((tag) => tags.add(tag.toLowerCase()));
   });
 
-  return Array.from(tags).map((tag: string) =>
+  return Array.from(tags).map((tag: any) =>
     paginate(
       posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.toLowerCase() === tag)),
       {
@@ -49,7 +49,7 @@ const meta = {
   <section class="p-5">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center">
       {
-        page.data.map((post) => (
+        page.data.map((post: any) => (
           <PostCard
             category={post.category}
             title={post.title}

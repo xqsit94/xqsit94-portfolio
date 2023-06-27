@@ -1,13 +1,12 @@
 ---
 import Layout from '~/layouts/Default.astro';
 import PostCard from '~/components/blogs/PostCard.astro';
-import type { GetStaticPathsOptions } from 'astro';
 import { BLOG, SITE } from '~/config.mjs';
 import { fetchPosts } from '~/utils/blog';
 import Pagination from '~/components/blogs/Pagination.astro';
 import { CATEGORY_BASE } from '~/utils/permalinks';
 
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+export async function getStaticPaths({ paginate }: any) {
   if (BLOG?.disabled || BLOG?.list?.disabled) return [];
 
   const posts = await fetchPosts();
@@ -17,7 +16,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     typeof post.category === 'string' && categories.add(post.category.toLowerCase());
   });
 
-  return Array.from(categories).map((category: string) =>
+  return Array.from(categories).map((category: any) =>
     paginate(
       posts.filter((post) => typeof post.category === 'string' && category === post.category.toLowerCase()),
       {
@@ -50,7 +49,7 @@ const meta = {
   <section class="p-5">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center">
       {
-        page.data.map((post) => (
+        page.data.map((post: any) => (
           <PostCard
             category={post.category}
             title={post.title}

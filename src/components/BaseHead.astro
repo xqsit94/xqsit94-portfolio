@@ -15,8 +15,6 @@ export interface Props extends MetaSEO {
   dontUseTitleTemplate?: boolean;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
 const {
   title,
   description,
