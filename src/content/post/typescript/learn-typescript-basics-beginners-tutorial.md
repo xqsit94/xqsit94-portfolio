@@ -4,7 +4,7 @@ category: 'Typescript'
 description: 'We will cover the basics of installing Typescript and compiling it into JavaScript. We’ll also explore data types, any types, built-in types, and user-defined types.'
 pubDate: 'Jun 28 2023'
 updatedDate: 'Jun 28 2023'
-heroImage: '/placeholder-hero.jpg'
+heroImage: '/images/typescript/learn-typescript-basics-beginners-tutorial.png'
 tags:
   - typescript
   - coding-basics
