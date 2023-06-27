@@ -6,14 +6,14 @@ export const SITE = {
   origin: 'https://lifeofdev.com',
   basePathname: '/',
   trailingSlash: false,
+
+  googleSiteVerificationId: 'google-site-verification-code',
+  googleAnalyticsId: 'google-analytics-id',
 };
 
 export const BLOG = {
   disabled: false,
   postsPerPage: 6,
-
-  googleSiteVerificationId: 'google-site-verification-code',
-  googleAnalyticsId: 'google-analytics-id',
 
   post: {
     permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
