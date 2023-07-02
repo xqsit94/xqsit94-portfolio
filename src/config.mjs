@@ -8,7 +8,7 @@ export const SITE = {
   trailingSlash: false,
 
   googleSiteVerificationId: 'google-site-verification-code',
-  googleAnalyticsId: 'google-analytics-id',
+  googleAnalyticsId: 'G-TGZPJ588P0',
 };
 
 export const BLOG = {
