@@ -7,7 +7,6 @@ export const SITE = {
   basePathname: '/',
   trailingSlash: false,
 
-  googleSiteVerificationId: 'google-site-verification-code',
   googleAnalyticsId: 'G-TGZPJ588P0',
 };
 
