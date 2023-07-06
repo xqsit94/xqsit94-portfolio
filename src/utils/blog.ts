@@ -3,11 +3,16 @@ import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { cleanSlug, trimSlash, POST_PERMALINK_PATTERN } from '~/utils/permalinks';
 
-const generatePermalink = async ({ id, slug, pubDate, category }: {
+const generatePermalink = async ({
+  id,
+  slug,
+  pubDate,
+  category,
+}: {
   id: string;
   slug: string;
   pubDate: Date;
-  category?: string
+  category?: string;
 }) => {
   const year = String(pubDate.getFullYear()).padStart(4, '0');
   const month = String(pubDate.getMonth() + 1).padStart(2, '0');
@@ -68,7 +73,7 @@ const load = async function (): Promise<Array<Post>> {
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf())
     .filter((post) => !post.draft);
-  
+
   return results;
 };
 
@@ -128,7 +133,7 @@ export const findTags = async (): Promise<Array<string>> => {
     }
     return acc;
   }, []);
-  return [...new Set(tags) as any];
+  return [...(new Set(tags) as any)];
 };
 
 /** */
@@ -140,5 +145,5 @@ export const findCategories = async (): Promise<Array<string>> => {
     }
     return acc;
   }, []);
-  return [...new Set(categories) as any];
+  return [...(new Set(categories) as any)];
 };

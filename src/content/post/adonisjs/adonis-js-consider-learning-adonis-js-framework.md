@@ -6,10 +6,11 @@ pubDate: 'Jul 03 2023'
 updatedDate: 'Jul 03 2023'
 heroImage: '/images/adonisjs/adonis-js-consider-learning-adonis-js-framework.png'
 tags:
-  - adonisjs 
+  - adonisjs
   - getting-started
   - nodejs
 ---
+
 ## What is Adonis JS
 
 Adonis JS is a powerful framework for Node.js that allows developers to build scalable and maintainable web applications and api servers with ease. It can handle various tasks like handling web requests, working with databases, validating data, handling files, and more. It also provides a robust set of features out of the box, including an ORM, authentication, and authorization, and a CLI tool for scaffolding.

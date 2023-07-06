@@ -1,12 +1,12 @@
 ---
 import { AstroSeo } from '@astrolib/seo';
-import { GoogleAnalytics } from '@astrolib/analytics';
 import type { MetaSEO } from '~/types';
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import { SITE } from '~/config.mjs';
 import '../styles/global.css';
 import { getCanonical, getAsset } from '~/utils/permalinks';
+import GoogleAnalytics from "./extenstions/GoogleAnalytics.astro";
 
 export interface Props extends MetaSEO {
   title: string;
@@ -31,46 +31,49 @@ const {
 } = Astro.props;
 ---
 
-<!-- Global Metadata -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+  <!-- Google Analytics -->
+  {SITE.googleAnalyticsId && <GoogleAnalytics id={String(SITE.googleAnalyticsId)} />}
+  
+  <!-- Global Metadata -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<!-- Primary Meta Tags -->
-<meta name="title" content={title} />
+  <!-- Primary Meta Tags -->
+  <meta name="title" content={title} />
 
-<AstroSeo
-  title={title}
-  titleTemplate={dontUseTitleTemplate ? '%s' : `%s — ${SITE.title}`}
-  description={description}
-  canonical={String(canonical)}
-  noindex={noindex}
-  nofollow={nofollow}
-  openGraph={{
-    url: String(canonical),
-    title: ogTitle,
-    description: description,
-    type: ogType,
-    images: image
-      ? [
-          {
-            url: image.toString(),
-            alt: ogTitle,
-          },
-        ]
-      : undefined,
-    // site_name: SITE.title,
-  }}
-  twitter={{
-    handle: '@xqsit94',
-    site: '@lifeofdev',
-    cardType: image ? 'summary_large_image' : undefined,
-  }}
-/>
+  <AstroSeo
+    title={title}
+    titleTemplate={dontUseTitleTemplate ? '%s' : `%s — ${SITE.title}`}
+    description={description}
+    canonical={String(canonical)}
+    noindex={noindex}
+    nofollow={nofollow}
+    openGraph={{
+      url: String(canonical),
+      title: ogTitle,
+      description: description,
+      type: ogType,
+      images: image
+        ? [
+            {
+              url: image.toString(),
+              alt: ogTitle,
+            },
+          ]
+        : undefined,
+      // site_name: SITE.title,
+    }}
+    twitter={{
+      handle: '@xqsit94',
+      site: '@lifeofdev',
+      cardType: image ? 'summary_large_image' : undefined,
+    }}
+  />
 
-<!-- Google Analytics -->
-{SITE.googleAnalyticsId && <GoogleAnalytics id={String(SITE.googleAnalyticsId)} partytown={true} />}
-
-<link rel="shortcut icon" href={getAsset('/favicon.ico')} />
-<link rel="icon" type="image/svg+xml" href={getAsset('/favicon.svg')} />
-<link rel="mask-icon" href={getAsset('/favicon.svg')} color="#8D46E7" />
-<link rel="sitemap" href={getAsset('/sitemap-index.xml')} />
+  <link rel="shortcut icon" href={getAsset('/favicon.ico')} />
+  <link rel="icon" type="image/svg+xml" href={getAsset('/favicon.ico')} />
+  <link rel="mask-icon" href={getAsset('/favicon.ico')} color="#8D46E7" />
+  <link rel="sitemap" href={getAsset('/sitemap-index.xml')} />
+  <title>{title}</title>
+</head>
