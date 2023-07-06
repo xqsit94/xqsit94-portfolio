@@ -6,7 +6,7 @@ import type { MetaSEO } from '~/types';
 import { SITE } from '~/config.mjs';
 import '../styles/global.css';
 import { getCanonical, getAsset } from '~/utils/permalinks';
-import GoogleAnalytics from "./extenstions/GoogleAnalytics.astro";
+import GoogleAnalytics from './extenstions/GoogleAnalytics.astro';
 
 export interface Props extends MetaSEO {
   title: string;
@@ -34,7 +34,7 @@ const {
 <head>
   <!-- Google Analytics -->
   {SITE.googleAnalyticsId && <GoogleAnalytics id={String(SITE.googleAnalyticsId)} />}
-  
+
   <!-- Global Metadata -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />

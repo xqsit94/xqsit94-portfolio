@@ -5,7 +5,7 @@ export const SITE = {
 
   origin: 'https://lifeofdev.com',
   basePathname: '/',
-  trailingSlash: false,
+  trailingSlash: true,
 
   googleAnalyticsId: 'G-4RT0BMTZHD',
 };

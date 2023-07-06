@@ -10,9 +10,11 @@ const gtagUrl = `https://www.googletagmanager.com/gtag/js?id=${id}`;
 
 <script type="text/partytown" async src={gtagUrl}></script>
 
-<script define:vars={{id}}>
+<script define:vars={{ id }}>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
   gtag('config', id);
 </script>
