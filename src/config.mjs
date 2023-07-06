@@ -7,7 +7,7 @@ export const SITE = {
   basePathname: '/',
   trailingSlash: false,
 
-  googleAnalyticsId: 'G-TGZPJ588P0',
+  googleAnalyticsId: 'G-4RT0BMTZHD',
 };
 
 export const BLOG = {
