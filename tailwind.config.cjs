@@ -2,7 +2,21 @@
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            code: {
+              color: theme('colors.pink.500'),
+              backgroundColor: theme('colors.pink.100'),
+              fontWeight: '500',
+              padding: '0.25rem',
+              borderRadius: '0.25rem !important',
+            },
+          },
+        },
+      }),
+    },
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
