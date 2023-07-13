@@ -42,7 +42,7 @@ const { title, category, pubDate, updatedDate, heroImage, tags } = Astro.props;
   <article class="prose lg:prose-xl mx-auto">
     {
       heroImage && (
-        <img width={720} height={360} src={heroImage} alt="" class="rounded-xl border-2 border-base-content" />
+        <img width={720} height={360} src={heroImage} alt={title} class="rounded-xl border-2 border-base-content" />
       )
     }
     <slot />

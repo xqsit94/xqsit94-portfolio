@@ -1,5 +1,6 @@
 ---
 import AppLogo from '~/components/parts/AppLogo.astro';
+import { SITE } from '~/config.mjs';
 
 const menuLinks = [
   {
@@ -44,6 +45,7 @@ const currentPath = pathname.slice(1);
           </div>
           <div class="flex-1 px-2 mx-2 normal-case text-xl">
             <a href="/">
+              <span class="hidden">{SITE.title}</span>
               <AppLogo />
             </a>
           </div>

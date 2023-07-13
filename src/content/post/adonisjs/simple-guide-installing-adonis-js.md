@@ -24,6 +24,7 @@ npm -v
 ```
 
 If you see the version numbers displayed, it means Node.js and NPM are installed correctly. Now, let's start installing Adonis JS 5 by creating a new project.
+
 ## Step 2: Create a New Project
 
 Now, let's create a new directory for your Adonis JS project. Open your command prompt or terminal and navigate to the location where you want to create the project folder. Once you're there, run the following command and press `y` to proceed next step.

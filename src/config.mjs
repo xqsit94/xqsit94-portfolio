@@ -1,7 +1,7 @@
 export const SITE = {
-  title: 'lifeofdev',
+  title: 'Lifeofdev',
   description:
-    'LIFEOFDEV is a web development blog where I share my journey as a software engineer. Join me as I document my experiences, insights, and lessons learned while working with Laravel, Vue.js, Node.js, and more.',
+    'Lifeofdev is a web development blog where I share my journey as a software engineer. Join me as I document my experiences, insights, and lessons learned while working with Laravel, Vue.js, Node.js, and more.',
 
   origin: 'https://lifeofdev.com',
   basePathname: '/',
