@@ -11,6 +11,7 @@ import partytown from '@astrojs/partytown';
 
 import tailwind from '@astrojs/tailwind';
 import { SITE } from './src/config.mjs';
+import icon from 'astro-icon';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -31,6 +32,11 @@ export default defineConfig({
     robotsTxt(),
     tailwind(),
     compress(),
+    icon({
+      include: {
+        tabler: ['chevron-left', 'chevron-right'],
+      },
+    }),
   ],
   vite: {
     resolve: {

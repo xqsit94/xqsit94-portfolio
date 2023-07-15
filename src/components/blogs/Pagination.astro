@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
 
 export interface Props {
@@ -13,7 +13,9 @@ const { prevUrl, nextUrl, prevText = 'Newer posts', nextText = 'Older posts' } =
 ---
 
 {
-  (prevUrl || nextUrl) && (
+  (prevUrl || nextUrl) 
+    && 
+  (
     <div class="container flex">
       <div class="flex flex-row mx-auto container justify-evenly">
         <a
