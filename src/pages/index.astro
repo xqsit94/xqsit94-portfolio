@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/Default.astro';
+import {Slider} from "~/components/home/Slider";
 
 const meta = {
   title: 'Manikandan B (xqsit94) | Full Stack Web Developer',
@@ -28,9 +29,7 @@ const meta = {
           </div>
         </div>
         <div class="h-[40vh] lg:h-auto w-full lg:w-2/4">
-          <div id="image-element" class="h-full lg:w-[360px] 2xl:w-[600px] mx-auto">
-            <img id="img4" src="/svg/4.svg" alt="Placeholder Image" class="h-full mx-auto" />
-          </div>
+          <Slider client:idle className="h-full lg:w-[360px] 2xl:w-[600px] mx-auto" />
         </div>
       </div>
     </div>
