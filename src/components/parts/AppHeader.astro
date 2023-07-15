@@ -55,7 +55,7 @@ const currentPath = pathname.slice(1);
                 menuLinks.map((link) => (
                   <li
                     class={
-                      currentPath === link.value
+                      currentPath === link.value + (link.value !== '' ? '/' : '')
                         ? 'rounded-xl hover:bg-accent bg-accent border-2 border-base-content'
                         : ''
                     }
