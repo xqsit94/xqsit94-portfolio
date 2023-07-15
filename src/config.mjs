@@ -14,6 +14,19 @@ export const BLOG = {
   disabled: false,
   postsPerPage: 6,
 
+  giscusConfig: {
+    repo: 'xqsit/lifeofdev.com',
+    repoId: 'R_kgDOJ7uu_g',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOJ7uu_s4CX5q_',
+    mapping: 'pathname',
+    reactionsEnabled: '1',
+    emitMetadata: '0',
+    inputPosition: 'top',
+    lang: 'en',
+    loading: 'lazy',
+  },
+
   post: {
     permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
     noindex: false,

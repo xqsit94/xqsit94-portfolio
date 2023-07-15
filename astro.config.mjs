@@ -2,7 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
-import vue from '@astrojs/vue';
+import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
@@ -25,12 +25,12 @@ export default defineConfig({
         forward: ['dataLayer.push'],
       },
     }),
+    react(),
     mdx(),
     sitemap(),
     robotsTxt(),
     tailwind(),
     compress(),
-    vue(),
   ],
   vite: {
     resolve: {
