@@ -35,6 +35,7 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['chevron-left', 'chevron-right'],
+        devicon: ['*'],
       },
     }),
   ],

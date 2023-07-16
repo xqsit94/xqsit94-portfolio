@@ -1,0 +1,99 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const skills: {
+  name: string;
+  icon?: string;
+}[] = [
+  {
+    name: 'JavaScript',
+    icon: 'devicon:javascript',
+  },
+  {
+    name: 'TypeScript',
+    icon: 'devicon:typescript',
+  },
+  {
+    name: 'Vue.js',
+    icon: 'devicon:vuejs',
+  },
+  {
+    name: 'React.js',
+    icon: 'devicon:react',
+  },
+  {
+    name: 'Laravel',
+    icon: 'devicon:laravel',
+  },
+  {
+    name: 'Adonisjs',
+    icon: 'devicon:adonisjs',
+  },
+  {
+    name: 'Node.js',
+    icon: 'devicon:nodejs',
+  },
+  {
+    name: 'Spring Boot',
+    icon: 'devicon:spring',
+  },
+  {
+    name: 'HTML5',
+    icon: 'devicon:html5',
+  },
+  {
+    name: 'CSS3',
+    icon: 'devicon:css3',
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: 'devicon:tailwindcss',
+  },
+  {
+    name: 'Bootstrap',
+    icon: 'devicon:bootstrap',
+  },
+  {
+    name: 'PHPStorm',
+    icon: 'devicon:phpstorm',
+  },
+  {
+    name: 'VS Code',
+    icon: 'devicon:vscode',
+  },
+  {
+    name: 'Git',
+    icon: 'devicon:git',
+  },
+  {
+    name: 'Jira',
+    icon: 'devicon:jira',
+  }
+]
+---
+<section class="md:h-screen border-t-2 border-base-content flex justify-center items-center bg-[#F8F6F4]">
+  <div class="lg:pb-16">
+    <div class="container mx-auto lg:pt-16">
+      <div class="w-11/12 xl:w-2/3 lg:w-2/3 md:w-2/3 mx-auto lg:mb-16">
+        <h1
+          class="focus:outline-none xl:text-5xl md:text-3xl text-xl text-center text-gray-800 font-extrabold mb-5 pt-4"
+          >Technical Skills &amp; Tools</h1>
+      </div>
+      <div class="xl:py-16 lg:py-16 md:py-16 py-8 px-15 flex flex-wrap">
+        {
+          skills.map((skill) => (
+            <div
+              class="group w-4/12 xl:w-1/4 lg:w-1/4 md:w-1/4 flex justify-center xl:pb-10 p-4 items-center cursor-pointer">
+              {
+                skill.icon &&
+                <Icon
+                  class="w-16 h-16"
+                  name={skill.icon} />
+              }
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

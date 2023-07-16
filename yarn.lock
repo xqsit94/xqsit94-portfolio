@@ -751,6 +751,13 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@iconify-json/devicon@^1.1.13":
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/@iconify-json/devicon/-/devicon-1.1.13.tgz#ca02c5afe613f56e2311d23a7b7fbebf5c6c3a96"
+  integrity sha512-CNXGeBampeh398jShA4PbYwMeYDIy2CKMgdp783abEKIgg/OvbPIpH119wfFWmXhGGDOONuFZbZwUjjG7jrvgA==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-json/tabler@^1.1.82":
   version "1.1.82"
   resolved "https://registry.yarnpkg.com/@iconify-json/tabler/-/tabler-1.1.82.tgz#728e4865a6aa94ce47a4bcba8d1a6587003492a6"
