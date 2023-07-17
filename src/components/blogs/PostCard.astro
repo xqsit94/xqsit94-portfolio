@@ -5,7 +5,7 @@ export interface Props {
   category: string;
   title: string;
   description: string;
-  date: Date;
+  date?: Date;
   slug: string;
   image?: string;
 }
@@ -34,8 +34,12 @@ const { category, title, description, date, slug, image = 'https://placehold.it/
     <p>
       {description}
     </p>
-    <div class="mt-5 flex items-center gap-5 text-base-content/60">
-      <p class="text-base"><FormattedDate date={date} /></p>
-    </div>
+    {
+      date && (
+        <div class="mt-5 flex items-center gap-5 text-base-content/60">
+          <p class="text-base"><FormattedDate date={date} /></p>
+        </div>
+      )
+    }
   </div>
 </div>

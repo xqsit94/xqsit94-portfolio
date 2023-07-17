@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 
 const skills: {
   name: string;
-  icon?: string;
+  icon: string;
 }[] = [
   {
     name: 'JavaScript',
@@ -83,12 +83,14 @@ const skills: {
         {
           skills.map((skill) => (
             <div
-              class="group w-4/12 xl:w-1/4 lg:w-1/4 md:w-1/4 flex justify-center xl:pb-10 p-4 items-center cursor-pointer">
+              class="relative group w-4/12 xl:w-1/4 lg:w-1/4 md:w-1/4 flex justify-center xl:pb-10 px-5 py-14 md:px-10 md:py-20 items-center">
               {
                 skill.icon &&
-                <Icon
-                  class="w-16 h-16"
-                  name={skill.icon} />
+                <div class="absolute tooltip" data-tip={skill.name}>
+                  <Icon
+                    class="w-16 h-16 cursor-pointer hover:w-20 hover:h-20 transition-all duration-300 ease-in-out"
+                    name={skill.icon} />
+                </div>
               }
             </div>
           ))
