@@ -15,9 +15,9 @@ const latestPosts = await findLatestPosts({ count: 3 });
           {
             latestPosts.map((post: Post) => (
               <PostCard
-                category={post.category}
+                category={post.category!}
                 title={post.title}
-                description={post.description}
+                description={post.description!}
                 image={post.heroImage}
                 slug={post.slug}
               />
