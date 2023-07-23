@@ -3,7 +3,7 @@ title: 'What are the Built-in Utility Types in Typescript?'
 category: 'Typescript'
 description: 'In TypeScript, built-in utility types are pre-defined type transformations provided by the language to make working with types easier and more expressive.'
 pubDate: 'Jul 08 2023'
-updatedDate: 'Jul 08 2023'
+updatedDate: 'Jul 23 2023'
 heroImage: '/images/typescript/built-in-utility-types-typescript.png'
 tags:
   - typescript
@@ -52,26 +52,23 @@ In this example, the `updateUser` function takes a `User` object and an obje
 
 ## Record<T, K>
 
-`Required<T>` is a built-in utility type in TypeScript that constructs a type with all properties of `T` set to required. This means that every property of the resulting type must be present.
+The `Record` utility in TypeScript is used to create a type with specified keys and value types. It takes two type arguments: the key type and the value type. Here's an example:
 
-Here's an example of how to use `Required<T>`:
+```typescript
+type Person = {
+  name: string;
+  age: number;
+};
 
-```tsx
-interface User {
-  id?: number;
-  name?: string;
-  email?: string;
-}
+const people: Record<string, Person> = {
+  john: { name: 'John', age: 30 },
+  jane: { name: 'Jane', age: 25 },
+};
 
-function createUser(user: Required<User>): void {
-  console.log(user.id, user.name, user.email);
-}
-
-const user: User = { id: 1, name: 'John Doe' };
-createUser(user); // Error: Property 'email' is missing in type '{ id: number; name: string; }' but required in type 'Required<User>'.
+const john = people['john']; // john is of type Person
 ```
 
-In this example, the `createUser` function takes a `User` object as a parameter, but the `User` interface defines all properties as optional. The `Required<User>` type is used to define the type of the `user` parameter in the `createUser` function, which means that every property of the `User` type must be present in the `user` object. When we try to call the `createUser` function with an incomplete `User` object, TypeScript throws an error because the `email` property is missing.
+In this example, we define a `Person` type with `name` and `age` properties. We then create a `Record` type with string keys and `Person` values. We use this `Record` type to define an object `people` with two entries, `john` and `jane`. We can then access the `john` entry and its properties using bracket notation.
 
 ## Pick<T, K>
 
