@@ -40,18 +40,18 @@ docker run --rm \
 This command creates a new Laravel project using the latest version of Laravel and the Laravel Sail Docker image.
 
 > Note: To ensure compatibility between the `laravelsail/phpXX-composer` image and your application, it is recommended to use the corresponding PHP version (74, 80, 81, or 82) that aligns with your application's requirements.
->
+
 1. After the project is created, navigate into the project directory using the **`cd`** command:
 
-    ```bash
-    cd my-laravel-app
-    ```
+   ```bash
+   cd my-laravel-app
+   ```
 
 2. Run the following command to start Laravel Sail:
 
-    ```bash
-    ./vendor/bin/sail up
-    ```
+   ```bash
+   ./vendor/bin/sail up
+   ```
 
    This command initializes the Docker containers defined in the Laravel Sail configuration and starts the development server.
 
@@ -85,31 +85,31 @@ sail node -v
 
 ## Few `sail` Commands
 
-| Sail Command | Description |
-| --- | --- |
-| sail up | Starts the Docker containers defined in the docker-compose.yml file, bringing the environment up. |
-| sail up -d | Starts the Docker containers in detached mode, running them in the background. |
-| sail down | Stops and removes the running Docker containers for the Laravel application. |
-| sail artisan | Executes Laravel's Artisan command-line interface inside the Sail container. |
-| sail composer | Runs Composer commands inside the Sail container for managing PHP dependencies. |
-| sail npm | Executes npm commands inside the Sail container for managing JavaScript dependencies. |
-| sail artisan migrate | Runs database migrations using Laravel's Artisan command-line interface. |
-| sail artisan tinker | Launches an interactive shell for interacting with the Laravel application. |
-| sail test | Runs tests for the Laravel application using PHPUnit. |
-| sail db:seed | Seeds the database with data using Laravel's database seeder. |
-| sail route:list | Displays a list of registered routes in the Laravel application. |
-| sail cache:clear | Clears the application cache. |
-| sail queue:work | Starts a worker to process queued jobs using Laravel's queue system. |
-| sail horizon | Runs the Laravel Horizon supervisor for managing the application's queue workers. |
-| sail horizon:terminate | Gracefully terminates the Laravel Horizon supervisor. |
-| sail schedule:run | Executes the scheduled tasks defined in the Laravel application. |
-| sail optimize | Optimizes the application for better performance. |
-| sail migrate:fresh | Drops all tables from the database and re-runs all migrations. |
-| sail migrate:rollback | Rolls back the last batch of database migrations. |
-| sail queue:retry | Retries a failed job in the Laravel queue. |
-| sail queue:failed | Lists and manages the failed jobs in the Laravel queue. |
-| sail storage:link | Creates the symbolic link from the public storage directory to the storage/app/public directory. |
-| sail passport:install | Installs the Laravel Passport package for API authentication. |
+| Sail Command           | Description                                                                                       |
+| ---------------------- | ------------------------------------------------------------------------------------------------- |
+| sail up                | Starts the Docker containers defined in the docker-compose.yml file, bringing the environment up. |
+| sail up -d             | Starts the Docker containers in detached mode, running them in the background.                    |
+| sail down              | Stops and removes the running Docker containers for the Laravel application.                      |
+| sail artisan           | Executes Laravel's Artisan command-line interface inside the Sail container.                      |
+| sail composer          | Runs Composer commands inside the Sail container for managing PHP dependencies.                   |
+| sail npm               | Executes npm commands inside the Sail container for managing JavaScript dependencies.             |
+| sail artisan migrate   | Runs database migrations using Laravel's Artisan command-line interface.                          |
+| sail artisan tinker    | Launches an interactive shell for interacting with the Laravel application.                       |
+| sail test              | Runs tests for the Laravel application using PHPUnit.                                             |
+| sail db:seed           | Seeds the database with data using Laravel's database seeder.                                     |
+| sail route:list        | Displays a list of registered routes in the Laravel application.                                  |
+| sail cache:clear       | Clears the application cache.                                                                     |
+| sail queue:work        | Starts a worker to process queued jobs using Laravel's queue system.                              |
+| sail horizon           | Runs the Laravel Horizon supervisor for managing the application's queue workers.                 |
+| sail horizon:terminate | Gracefully terminates the Laravel Horizon supervisor.                                             |
+| sail schedule:run      | Executes the scheduled tasks defined in the Laravel application.                                  |
+| sail optimize          | Optimizes the application for better performance.                                                 |
+| sail migrate:fresh     | Drops all tables from the database and re-runs all migrations.                                    |
+| sail migrate:rollback  | Rolls back the last batch of database migrations.                                                 |
+| sail queue:retry       | Retries a failed job in the Laravel queue.                                                        |
+| sail queue:failed      | Lists and manages the failed jobs in the Laravel queue.                                           |
+| sail storage:link      | Creates the symbolic link from the public storage directory to the storage/app/public directory.  |
+| sail passport:install  | Installs the Laravel Passport package for API authentication.                                     |
 
 These are just a few examples of common Sail commands in Laravel. You can explore more commands and their usage in the Laravel documentation (https://laravel.com/docs) or by running `sail help` to see a list of available commands inside your Laravel Sail environment.
 
