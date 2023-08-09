@@ -30,7 +30,6 @@ const array2 = [4, 5, 6];
 const mergedArray = [...array1, ...array2];
 
 console.log(mergedArray); // Output: [1, 2, 3, 4, 5, 6]
-
 ```
 
 ### 1.2 Copying Arrays and Objects:
@@ -45,7 +44,6 @@ const originalObject = { name: 'John', age: 30 };
 const copyOfObject = { ...originalObject };
 
 console.log(copyOfObject); // Output: { name: 'John', age: 30 }
-
 ```
 
 ### 1.3 Function Arguments:
@@ -59,7 +57,6 @@ function sum(a, b, c, d, e) {
 
 const result = sum(...numbers);
 console.log(result); // Output: 15
-
 ```
 
 ## 2. Exploring the Rest Operator:
@@ -85,7 +82,6 @@ First Name: John
 Last Name: Doe
 Middle Names: David, Michael, Smith
 */
-
 ```
 
 ### 2.2 Collecting Remaining Array Elements:
@@ -97,7 +93,6 @@ const [firstFruit, ...remainingFruits] = fruits;
 
 console.log(firstFruit); // Output: apple
 console.log(remainingFruits); // Output: ['banana', 'orange', 'grape']
-
 ```
 
 ## Conclusion:
