@@ -100,4 +100,5 @@ Promises are a powerful tool in modern JavaScript for handling asynchronous oper
 In this blog post, we explored real-world scenarios where Promises shine, from fetching data from APIs to handling parallel tasks. By incorporating Promises into your coding toolkit, you'll take a significant step toward mastering asynchronous JavaScript and building more efficient and maintainable code.
 
 ### Also Read
+
 - [Asynchronous JavaScript: Simplifying Complex Tasks with Async/Await](/asynchronous-javascript-simplifying-complex-tasks-async-await/)

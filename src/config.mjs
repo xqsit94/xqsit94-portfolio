@@ -25,6 +25,7 @@ export const BLOG = {
     inputPosition: 'top',
     lang: 'en',
     loading: 'lazy',
+    theme: 'transparent_dark',
   },
 
   post: {

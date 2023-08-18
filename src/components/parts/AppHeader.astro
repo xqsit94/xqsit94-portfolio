@@ -1,5 +1,6 @@
 ---
 import AppLogo from '~/components/parts/AppLogo.astro';
+import ThemeToggle from '~/components/parts/ThemeToggle.tsx';
 import { SITE } from '~/config.mjs';
 
 const menuLinks = [
@@ -25,7 +26,7 @@ const currentPath = pathname.slice(1);
 ---
 
 <header class="header">
-  <div class="drawer border-y-2 border-base-content">
+  <div class="drawer border-b-4 border-accent">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
@@ -43,21 +44,21 @@ const currentPath = pathname.slice(1);
               >
             </label>
           </div>
-          <div class="flex-1 px-2 mx-2 normal-case text-xl">
+          <div class="flex-1 justify-end px-2 mx-2 normal-case text-xl">
             <a href="/">
               <span class="hidden">{SITE.title}</span>
               <AppLogo />
             </a>
           </div>
           <div class="flex-none hidden lg:block">
-            <ul class="menu menu-horizontal bg-secondary text-black font-bold rounded-xl border-2 border-base-content">
+            <ul class="menu menu-horizontal font-bold">
               {
                 menuLinks.map((link) => (
                   <li
                     class={
                       currentPath === link.value + (link.value !== '' ? '/' : '')
-                        ? 'rounded-xl hover:bg-accent bg-accent border-2 border-base-content'
-                        : ''
+                        ? 'mx-1 text-xl font-medium rounded hover:rounded hover:bg-neutral bg-neutral border-t-2 border-accent'
+                        : 'mx-1 text-xl font-medium'
                     }
                   >
                     <a href={link.link}>{link.name}</a>
@@ -65,6 +66,9 @@ const currentPath = pathname.slice(1);
                 ))
               }
             </ul>
+          </div>
+          <div class="flex-none w-8 h-8 mx-3">
+            <ThemeToggle client:only="react" />
           </div>
         </div>
       </div>
