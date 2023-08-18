@@ -1,5 +1,6 @@
 ---
 import AppLogo from '~/components/parts/AppLogo.astro';
+import ThemeToggle from '~/components/parts/ThemeToggle.tsx';
 import { SITE } from '~/config.mjs';
 
 const menuLinks = [
@@ -66,6 +67,7 @@ const currentPath = pathname.slice(1);
               }
             </ul>
           </div>
+          <ThemeToggle client:idle />
         </div>
       </div>
     </div>
