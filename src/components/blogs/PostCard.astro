@@ -13,7 +13,7 @@ export interface Props {
 const {category, title, description, date, slug, image = 'https://placehold.it/360x240'} = Astro.props;
 ---
 
-<div class="card w-fit bg-neutral rounded-xl font-work shadow-dark-3xl">
+<div class="card w-fit bg-neutral rounded-xl font-work shadow-blur-3xl">
   <figure>
     <a href={`/${slug}/`}>
       <img src={image} alt={title} class="border-b-4 border-accent" width="420" height="240"/>

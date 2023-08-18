@@ -13,7 +13,11 @@ const Comments = () => {
 
   const giscusConfig: GiscusProps = BLOG.giscusConfig as GiscusProps;
 
-  return <div id={id} className="my-10">{mounted ? <Giscus id={id} {...giscusConfig} /> : null}</div>;
+  return (
+    <div id={id} className="my-10">
+      {mounted ? <Giscus id={id} {...giscusConfig} /> : null}
+    </div>
+  );
 };
 
 export default Comments;

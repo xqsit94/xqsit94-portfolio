@@ -7,15 +7,14 @@ module.exports = {
         tamil: ['Anek Tamil', 'sans-serif'],
       },
       boxShadow: {
-        'dark-3xl': '.05em .3em .4em hsl(234, 41%, 6%)',
+        'blur-3xl': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.300'),
             code: {
               color: theme('colors.pink.500'),
-              backgroundColor: theme('colors.pink.100'),
+              backgroundColor: 'rgba(255,0,96,0.04)',
               fontWeight: '500',
               padding: '0.25rem',
               borderRadius: '0.25rem !important',
@@ -31,10 +30,11 @@ module.exports = {
       {
         light: {
           ...require('daisyui/src/theming/themes')['[data-theme=light]'],
-          primary: '#1a725b',
-          secondary: '#F6FA70',
-          accent: '#FF0060',
-          neutral: '#0082df',
+          color: '#1c1e2b',
+          primary: '#fbfffb',
+          secondary: '#2ecc71',
+          accent: '#e74c3c',
+          neutral: '#fff7f7',
         },
       },
       {
