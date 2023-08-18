@@ -44,7 +44,7 @@ const currentPath = pathname.slice(1);
               >
             </label>
           </div>
-          <div class="flex-1 px-2 mx-2 normal-case text-xl">
+          <div class="flex-1 justify-end px-2 mx-2 normal-case text-xl">
             <a href="/">
               <span class="hidden">{SITE.title}</span>
               <AppLogo />
@@ -67,7 +67,9 @@ const currentPath = pathname.slice(1);
               }
             </ul>
           </div>
-          <ThemeToggle client:idle />
+          <div class="flex-none w-8 h-8 mx-3">
+            <ThemeToggle client:only="react" />
+          </div>
         </div>
       </div>
     </div>
