@@ -6,7 +6,7 @@ import type { Post } from "~/types";
 const latestPosts = await findLatestPosts({ count: 3 });
 ---
 
-<section class="md:h-screen border-t-2 border-base-content flex justify-center items-center bg-[#FFF8EA]">
+<section class="md:h-screen border-t-2 border-accent flex justify-center items-center bg-primary">
   <div class="container mx-auto">
     <div class="flex flex-wrap justify-center">
       <h1 class="text-5xl font-bold uppercase -mx-4 mt-12 mb-5">Recent Posts</h1>
@@ -25,7 +25,7 @@ const latestPosts = await findLatestPosts({ count: 3 });
           }
         </div>
       </section>
-      <a href="/blog/" class="btn btn-accent btn-wide items-center mt-5 mb-12 no-animation hover:bg-accent hover:text-base-100 hover:border-base-content bg-secondary border-2 border-base-content">More Posts</a>
+      <a href="/blog/" class="btn btn-outline btn-wide items-center mt-5 mb-12">More Posts</a>
     </div>
     
   </div>
