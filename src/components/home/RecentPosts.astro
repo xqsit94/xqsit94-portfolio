@@ -18,8 +18,8 @@ const latestPosts = await findLatestPosts({ count: 3 });
                 category={post.category!}
                 title={post.title}
                 description={post.description!}
-                image={post.heroImage}
-                slug={post.slug}
+                image={post.heroImage!}
+                slug={post.slug!}
               />
             ))
           }
