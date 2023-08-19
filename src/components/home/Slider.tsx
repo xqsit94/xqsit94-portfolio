@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export const Slider = ({ className }: { className: string }) => {
-  const imageCount = 5;
+  const imageCount = 6;
   const [imageId, setFace] = React.useState(1);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setFace((imageId) => ((imageId + 1) % imageCount) + 1);
+      setFace((imageId) => (imageId % imageCount) + 1);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
