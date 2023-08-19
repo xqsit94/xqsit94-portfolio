@@ -1,6 +1,6 @@
 ---
 import AppLogo from '~/components/parts/AppLogo.astro';
-import ThemeToggle from '~/components/parts/ThemeToggle';
+import ThemeToggle from '~/components/parts/ThemeToggle.astro';
 import { SITE } from '~/config.mjs';
 
 const menuLinks = [
@@ -68,7 +68,7 @@ const currentPath = pathname.slice(1);
             </ul>
           </div>
           <div class="flex-none w-8 h-8 mx-3">
-            <ThemeToggle client:only="react" />
+            <ThemeToggle />
           </div>
         </div>
       </div>
