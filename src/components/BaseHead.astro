@@ -7,6 +7,7 @@ import { SITE } from '~/config.mjs';
 import '../styles/global.css';
 import { getCanonical, getAsset } from '~/utils/permalinks';
 import GoogleAnalytics from './extenstions/GoogleAnalytics.astro';
+import { ViewTransitions } from 'astro:transitions';
 
 export interface Props extends MetaSEO {
   title: string;
@@ -76,4 +77,6 @@ const {
   <link rel="mask-icon" href={getAsset('/favicon.ico')} color="#8D46E7" />
   <link rel="sitemap" href={getAsset('/sitemap-index.xml')} />
   <title>{title}</title>
+  
+  <ViewTransitions />
 </head>
