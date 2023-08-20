@@ -6,6 +6,7 @@ const post = defineCollection({
     title: z.string(),
     category: z.string(),
     description: z.string(),
+    slug: z.string().optional(),
     // Transform string to Date object
     pubDate: z
       .string()
