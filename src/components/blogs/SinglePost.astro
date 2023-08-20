@@ -4,7 +4,9 @@ import FormattedDate from '~/components/FormattedDate.astro';
 import PostTags from '~/components/blogs/PostTags.astro';
 import Comments from '~/components/blogs/Comments';
 
-type Props = CollectionEntry<'post'>['data'];
+type Props = CollectionEntry<'post'>['data'] & {
+  slug: string;
+};
 
 const { title, category, pubDate, updatedDate, heroImage, tags, slug } = Astro.props;
 ---
