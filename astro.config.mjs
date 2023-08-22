@@ -17,10 +17,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    assets: true,
-    viewTransitions: true
-  },
   site: SITE.origin,
   base: SITE.basePathname,
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',

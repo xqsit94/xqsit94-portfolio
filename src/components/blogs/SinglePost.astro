@@ -13,7 +13,7 @@ const { title, category, pubDate, updatedDate, heroImage, tags, slug } = Astro.p
 
 <div class="container mx-auto px-5 md:px-0 w-full md:w-10/12 lg:w-6/12 font-work">
   <div class="py-5">
-    <a href={`/category/${category}/`} transition:name={`cat-${slug}`}>
+    <a href={`/category/${category}/`} >
       <div
         class="w-fit px-2.5 py-1 bg-accent hover:bg-accent/80 text-base-100 text-xs md:text-sm rounded-md mb-2 md:mb-4 font-bold uppercase"
       >
@@ -22,7 +22,6 @@ const { title, category, pubDate, updatedDate, heroImage, tags, slug } = Astro.p
     </a>
     <h1 
       class="text-base-content font-semibold text-xl md:text-2xl lg:text-5xl leading-5 md:leading-10"
-      transition:name={`title-${slug}`}
     >
       {title}
     </h1>
@@ -54,7 +53,6 @@ const { title, category, pubDate, updatedDate, heroImage, tags, slug } = Astro.p
           src={heroImage} 
           alt={title} 
           class="rounded-xl border-2 border-base-content"
-          transition:name={`image-${slug}`}
         />
       )
     }
