@@ -832,6 +832,11 @@
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
+"@nanostores/logger@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@nanostores/logger/-/logger-0.2.3.tgz#95e559a4d12eed9eff705d918e890a741722de6e"
+  integrity sha512-imuhrgyONQ75kDkJxlhgYNK27rmTehyzV4bEty51fk42IO44hJtpoi4E/eteRfdS6Zl6Vc9cFEoiGHhZfzawhA==
+
 "@nanostores/react@^0.7.1":
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@nanostores/react/-/react-0.7.1.tgz#e0446f5cacc9fa53448c454f5d00ddb0f906a37a"

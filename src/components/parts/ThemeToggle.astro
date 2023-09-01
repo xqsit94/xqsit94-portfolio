@@ -12,11 +12,14 @@
 </label>
 
 <script>
+  import {$theme} from "../../stores/theme";
+  
   const toggleTheme = document.querySelector('#toggle-theme') as HTMLInputElement;
 
   const setTheme = (theme: string): void => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    $theme.set(theme);
   }
 
   const toggleThemeHandler = (): void => {
@@ -30,6 +33,7 @@
   toggleTheme.addEventListener('change', toggleThemeHandler);
 
   const currentTheme = localStorage.getItem('theme') || 'dark';
+  $theme.set(currentTheme);
   document.documentElement.setAttribute('data-theme', currentTheme);
   toggleTheme.checked = currentTheme === 'dark';
 </script>
