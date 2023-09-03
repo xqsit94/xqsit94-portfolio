@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import FormattedDate from '@/components/shared/FormattedDate.astro'
 
 export interface Props {
@@ -23,7 +24,7 @@ const {
 <div class='card w-fit bg-neutral rounded-xl font-work shadow-blur-3xl'>
   <figure>
     <a href={`/${slug}/`}>
-      <img
+      <Image
         src={image}
         alt={title}
         class='border-b-4 border-accent'

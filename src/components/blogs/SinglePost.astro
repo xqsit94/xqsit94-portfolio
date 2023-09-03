@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import FormattedDate from '@/components/shared/FormattedDate.astro'
 import PostTags from '@/components/blogs/PostTags.astro'
 import Comments from '@/components/blogs/Comments'
@@ -48,7 +49,7 @@ const { title, category, publishedDate, updatedDate, heroImage, tags } =
   <article class='prose lg:prose-xl mx-auto'>
     {
       heroImage && (
-        <img
+        <Image
           id='hero-image'
           width={720}
           height={360}
