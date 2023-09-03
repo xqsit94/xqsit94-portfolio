@@ -2,7 +2,7 @@
 title: 'Asynchronous JavaScript: Promises, Async/Await, and Callbacks'
 category: 'Javascript'
 description: 'Asynchronous programming is a crucial aspect of JavaScript that allows developers to execute tasks concurrently, without blocking the main thread.'
-pubDate: 'Aug 10 2023'
+publishedDate: 'Aug 10 2023'
 updatedDate: 'Aug 10 2023'
 heroImage: '/images/javascript/asynchronous-javascript-promises-async-await-callbacks.png'
 tags:
@@ -27,10 +27,10 @@ function fetchDataFromAPI(callback) {
       processData(data, (result) => {
         displayData(result, () => {
           // More callbacks can be nested here
-        });
-      });
-    });
-  });
+        })
+      })
+    })
+  })
 }
 ```
 
@@ -40,26 +40,26 @@ Suppose we have a weather API, and we want to retrieve the weather forecast for 
 
 ```jsx
 function fetchWeatherData(city, callback) {
-  const apiUrl = `https://api.weather.example.com/forecast/${city}`;
+  const apiUrl = `https://api.weather.example.com/forecast/${city}`
   fetch(apiUrl, (response) => {
     if (response.status === 200) {
       response.json((data) => {
-        callback(data);
-      });
+        callback(data)
+      })
     } else {
-      callback(null, 'Error: Unable to fetch weather data.');
+      callback(null, 'Error: Unable to fetch weather data.')
     }
-  });
+  })
 }
 
 // Usage
 fetchWeatherData('New York', (data, error) => {
   if (error) {
-    console.error(error);
+    console.error(error)
   } else {
-    console.log(data);
+    console.log(data)
   }
-});
+})
 ```
 
 ## 2. Promises
@@ -72,27 +72,27 @@ In this example we are fetching same weather data for cities using promises
 
 ```jsx
 const fetchWeatherData = (city) => {
-  const apiUrl = `https://api.weather.example.com/forecast/${city}`;
+  const apiUrl = `https://api.weather.example.com/forecast/${city}`
 
   return new Promise((resolve, reject) => {
     fetch(apiUrl)
       .then((response) => {
         if (response.status === 200) {
-          resolve(response.json());
+          resolve(response.json())
         } else {
-          reject(new Error('Unable to fetch weather data.'));
+          reject(new Error('Unable to fetch weather data.'))
         }
       })
       .catch((error) => {
-        reject(error);
-      });
-  });
-};
+        reject(error)
+      })
+  })
+}
 
 // Usage
 fetchWeatherData('New York')
   .then((data) => console.log(data))
-  .catch((error) => console.error(error));
+  .catch((error) => console.error(error))
 ```
 
 ## 3. Async/Await
@@ -105,29 +105,29 @@ In this example, we'll use Async/Await to fetch weather data for multiple cities
 
 ```jsx
 const fetchWeatherData = async (city) => {
-  const apiUrl = `https://api.weather.example.com/forecast/${city}`;
-  const response = await fetch(apiUrl);
+  const apiUrl = `https://api.weather.example.com/forecast/${city}`
+  const response = await fetch(apiUrl)
 
   if (response.status === 200) {
-    return response.json();
+    return response.json()
   } else {
-    throw new Error('Unable to fetch weather data.');
+    throw new Error('Unable to fetch weather data.')
   }
-};
+}
 
 // Usage
 const fetchWeatherForCities = async (cities) => {
   try {
     for (const city of cities) {
-      const data = await fetchWeatherData(city);
-      console.log(`Weather in ${city}:`, data);
+      const data = await fetchWeatherData(city)
+      console.log(`Weather in ${city}:`, data)
     }
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-};
+}
 
-fetchWeatherForCities(['New York', 'London', 'Tokyo']);
+fetchWeatherForCities(['New York', 'London', 'Tokyo'])
 ```
 
 ## Conclusion

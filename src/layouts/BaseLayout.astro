@@ -1,14 +1,14 @@
 ---
-import BaseHead from '~/components/BaseHead.astro';
+import BaseHead from '@/components/shared/BaseHead.astro'
 
-const { meta = {} } = Astro.props;
+const { meta = {} } = Astro.props
 ---
 
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang='en' data-theme='dark'>
   <BaseHead {...meta} />
   <body>
-    <div class="layout">
+    <div class='layout'>
       <slot />
     </div>
   </body>

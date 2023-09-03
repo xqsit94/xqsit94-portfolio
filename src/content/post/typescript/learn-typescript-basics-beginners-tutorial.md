@@ -2,7 +2,7 @@
 title: 'Learn Typescript Basics - Beginners Tutorial'
 category: 'Typescript'
 description: 'We will cover the basics of installing Typescript and compiling it into JavaScript. We’ll also explore data types, any types, built-in types, and user-defined types.'
-pubDate: 'Jun 28 2023'
+publishedDate: 'Jun 28 2023'
 updatedDate: 'Jun 28 2023'
 heroImage: '/images/typescript/learn-typescript-basics-beginners-tutorial.png'
 tags:
@@ -52,9 +52,9 @@ Typescript supports a range of data types, including any types, built-in types, 
 The `any` type is a special type in Typescript that can be used to represent any data type. This can be useful in situations where you don't know the type of a variable ahead of time.
 
 ```typescript
-let myVariable: any = 'Hello, world!';
-myVariable = 42;
-myVariable = true;
+let myVariable: any = 'Hello, world!'
+myVariable = 42
+myVariable = true
 ```
 
 ### Built-in Types
@@ -67,11 +67,11 @@ Typescript also supports a range of built-in data types, including:
 - `null` and `undefined`: represent null and undefined values, respectively
 
 ```typescript
-let myNumber: number = 42;
-let myString: string = 'Hello, world!';
-let myBoolean: boolean = true;
-let myNull: null = null;
-let myUndefined: undefined = undefined;
+let myNumber: number = 42
+let myString: string = 'Hello, world!'
+let myBoolean: boolean = true
+let myNull: null = null
+let myUndefined: undefined = undefined
 ```
 
 ### User-defined Types
@@ -80,27 +80,29 @@ Finally, Typescript allows you to define your own custom data types using interf
 
 ```typescript
 interface Person {
-  name: string;
-  age: number;
-  sayHello(): void;
+  name: string
+  age: number
+  sayHello(): void
 }
 
 class Employee implements Person {
-  name: string;
-  age: number;
+  name: string
+  age: number
 
   constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
+    this.name = name
+    this.age = age
   }
 
   sayHello() {
-    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    console.log(
+      `Hello, my name is ${this.name} and I am ${this.age} years old.`
+    )
   }
 }
 
-const john = new Employee('John', 30);
-john.sayHello(); // Output: "Hello, my name is John and I am 30 years old."
+const john = new Employee('John', 30)
+john.sayHello() // Output: "Hello, my name is John and I am 30 years old."
 ```
 
 ## Object-Oriented Programming in Typescript
@@ -113,21 +115,23 @@ Classes in Typescript are similar to classes in other object-oriented programmin
 
 ```typescript
 class Person {
-  name: string;
-  age: number;
+  name: string
+  age: number
 
   constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
+    this.name = name
+    this.age = age
   }
 
   sayHello() {
-    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    console.log(
+      `Hello, my name is ${this.name} and I am ${this.age} years old.`
+    )
   }
 }
 
-const john = new Person('John', 30);
-john.sayHello(); // Output: "Hello, my name is John and I am 30 years old."
+const john = new Person('John', 30)
+john.sayHello() // Output: "Hello, my name is John and I am 30 years old."
 ```
 
 ### Interfaces
@@ -136,27 +140,29 @@ As we saw earlier, interfaces allow you to define a set of properties and method
 
 ```typescript
 interface Person {
-  name: string;
-  age: number;
-  sayHello(): void;
+  name: string
+  age: number
+  sayHello(): void
 }
 
 class Employee implements Person {
-  name: string;
-  age: number;
+  name: string
+  age: number
 
   constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
+    this.name = name
+    this.age = age
   }
 
   sayHello() {
-    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    console.log(
+      `Hello, my name is ${this.name} and I am ${this.age} years old.`
+    )
   }
 }
 
-const john = new Employee('John', 30);
-john.sayHello(); // Output: "Hello, my name is John and I am 30 years old."
+const john = new Employee('John', 30)
+john.sayHello() // Output: "Hello, my name is John and I am 30 years old."
 ```
 
 ## Conclusion

@@ -2,7 +2,7 @@
 title: 'Asynchronous JavaScript: Exploring Promises with Real-World Examples'
 category: 'Javascript'
 description: 'Asynchronous programming is a crucial skill for any JavaScript developer. Promises, a feature introduced in ES6'
-pubDate: 'Aug 11 2023'
+publishedDate: 'Aug 11 2023'
 updatedDate: 'Aug 11 2023'
 heroImage: '/images/javascript/asynchronous-javascript-exploring-promises-real-world-examples.png'
 tags:
@@ -22,27 +22,27 @@ Example - Fetching Data with Promises:
 
 ```jsx
 const fetchWeatherData = (city) => {
-  const apiUrl = `https://api.weather.example.com/forecast/${city}`;
+  const apiUrl = `https://api.weather.example.com/forecast/${city}`
 
   return new Promise((resolve, reject) => {
     fetch(apiUrl)
       .then((response) => {
         if (response.status === 200) {
-          resolve(response.json());
+          resolve(response.json())
         } else {
-          reject(new Error('Unable to fetch weather data.'));
+          reject(new Error('Unable to fetch weather data.'))
         }
       })
       .catch((error) => {
-        reject(error);
-      });
-  });
-};
+        reject(error)
+      })
+  })
+}
 
 // Usage
 fetchWeatherData('New York')
   .then((data) => console.log(data))
-  .catch((error) => console.error(error));
+  .catch((error) => console.error(error))
 ```
 
 ## Chaining Multiple Promises:
@@ -56,18 +56,18 @@ const fetchAndProcessWeather = (city) => {
   fetchWeatherData(city)
     .then((data) => {
       // Perform additional processing on data
-      return processWeatherData(data);
+      return processWeatherData(data)
     })
     .then((processedData) => {
-      console.log('Processed Weather Data:', processedData);
+      console.log('Processed Weather Data:', processedData)
     })
     .catch((error) => {
-      console.error('An error occurred:', error);
-    });
-};
+      console.error('An error occurred:', error)
+    })
+}
 
 // Usage
-fetchAndProcessWeather('London');
+fetchAndProcessWeather('London')
 ```
 
 ## Handling Parallel Promises:
@@ -78,19 +78,19 @@ Example - Parallel Promises:
 
 ```jsx
 const fetchMultipleWeatherData = (cities) => {
-  const promises = cities.map((city) => fetchWeatherData(city));
+  const promises = cities.map((city) => fetchWeatherData(city))
 
   Promise.all(promises)
     .then((results) => {
-      console.log('Fetched Weather Data for Multiple Cities:', results);
+      console.log('Fetched Weather Data for Multiple Cities:', results)
     })
     .catch((error) => {
-      console.error('An error occurred:', error);
-    });
-};
+      console.error('An error occurred:', error)
+    })
+}
 
 // Usage
-fetchMultipleWeatherData(['New York', 'London', 'Tokyo']);
+fetchMultipleWeatherData(['New York', 'London', 'Tokyo'])
 ```
 
 ## Conclusion

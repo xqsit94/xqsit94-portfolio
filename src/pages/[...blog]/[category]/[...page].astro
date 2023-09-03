@@ -1,70 +1,81 @@
 ---
-import Layout from '~/layouts/Default.astro';
-import PostCard from '~/components/blogs/PostCard.astro';
-import { BLOG, SITE } from '~/config.mjs';
-import { fetchPosts } from '~/utils/blog';
-import Pagination from '~/components/blogs/Pagination.astro';
-import { CATEGORY_BASE } from '~/utils/permalinks';
+import Layout from '@/layouts/DefaultLayout.astro'
+import PostCard from '@/components/blogs/PostCard.astro'
+import { BLOG, SITE } from '@/config.mjs'
+import { fetchPosts } from '@/utils/blogs'
+import Pagination from '@/components/blogs/Pagination.astro'
+import { CATEGORY_BASE } from '@/utils/functions'
 
 export async function getStaticPaths({ paginate }: any) {
-  if (BLOG?.disabled || BLOG?.list?.disabled) return [];
+  if (BLOG?.disabled || BLOG?.list?.disabled) return []
 
-  const posts = await fetchPosts();
-  const categories = new Set();
+  const posts = await fetchPosts()
+  const categories = new Set()
 
   posts.map((post) => {
-    typeof post.category === 'string' && categories.add(post.category.toLowerCase());
-  });
+    typeof post.category === 'string' &&
+      categories.add(post.category.toLowerCase())
+  })
 
-  return Array.from(categories).map((category: any) =>
+  return Array.from(categories).flatMap((category: any) =>
     paginate(
-      posts.filter((post) => typeof post.category === 'string' && category === post.category.toLowerCase()),
+      posts.filter(
+        (post) =>
+          typeof post.category === 'string' &&
+          category === post.category.toLowerCase()
+      ),
       {
         params: { category: category, blog: CATEGORY_BASE || undefined },
         pageSize: BLOG.postsPerPage,
-        props: { category },
+        props: { category }
       }
     )
-  );
+  )
 }
 
-const { page, category } = Astro.props;
-const currentPage = page.currentPage ?? 1;
+const { page, category } = Astro.props
+const currentPage = page.currentPage ?? 1
 
 const meta = {
-  title: `Category'${category}' ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: `Category'${category}' ${
+    currentPage > 1 ? ` — Page ${currentPage}` : ''
+  }`,
   description: SITE.description,
-  noindex: BLOG?.category?.noindex,
-};
+  noindex: BLOG?.category?.noindex
+}
 ---
 
 <Layout {meta}>
-  <div class="container mx-auto">
-  <section class="flex relative">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap justify-center -mx-4 mt-28 mb-5">
-        <h1 class="text-5xl font-bold uppercase">{category.replaceAll('-', ' ')}</h1>
+  <div class='container mx-auto'>
+    <section class='flex relative'>
+      <div class='container mx-auto'>
+        <div class='flex flex-wrap justify-center -mx-4 mt-28 mb-5'>
+          <h1 class='text-5xl font-bold uppercase'>
+            {category.replaceAll('-', ' ')}
+          </h1>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="p-5">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center">
-      {
-        page.data.map((post: any) => (
-          <PostCard
-            category={post.category}
-            title={post.title}
-            description={post.description}
-            date={post.pubDate}
-            image={post.heroImage}
-            slug={post.slug}
-          />
-        ))
-      }
-    </div>
-  </section>
-  <section class="p-5">
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-  </section>
+    </section>
+    <section class='p-5'>
+      <div
+        class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center'
+      >
+        {
+          page.data.map((post: any) => (
+            <PostCard
+              category={post.category}
+              title={post.title}
+              description={post.description}
+              date={post.pubDate}
+              image={post.heroImage}
+              slug={post.slug}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <section class='p-5'>
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    </section>
   </div>
 </Layout>

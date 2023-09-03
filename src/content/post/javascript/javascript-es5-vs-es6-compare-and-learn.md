@@ -2,7 +2,7 @@
 title: 'JavaScript ES5 vs ES6 - Compare and Learn'
 category: 'Javascript'
 description: 'Two important versions of JavaScript, ES5 (ECMAScript 5) and ES6 (ECMAScript 2015), have played a crucial role in shaping the language. In this article, we will explore the differences between ES5 and ES6'
-pubDate: 'Jul 10 2023'
+publishedDate: 'Jul 10 2023'
 updatedDate: 'Jul 10 2023'
 heroImage: '/images/javascript/javascript-es5-vs-es6-compare-and-learn.png'
 tags:
@@ -23,19 +23,19 @@ In ES5 JavaScript, variables declared with the `var` keyword are function-scoped
 
 ```jsx
 function foo() {
-  var x = 10;
-  console.log(x); // Output: 10
+  var x = 10
+  console.log(x) // Output: 10
 
   function bar() {
-    var y = 20;
-    console.log(x); // Output: 10
-    console.log(y); // Output: 20
+    var y = 20
+    console.log(x) // Output: 10
+    console.log(y) // Output: 20
   }
 
-  bar();
+  bar()
 }
 
-foo();
+foo()
 ```
 
 In this example, the variables `x` and `y` are declared using the `var` keyword inside the `foo` and `bar` functions, respectively. The `x` variable is accessible inside the `bar` function because it is nested inside the `foo` function. However, the `y` variable is not accessible outside the `bar` function.
@@ -46,19 +46,19 @@ In ES6 JavaScript, `let` and `const` keywords are used to declare block-scoped v
 
 ```jsx
 function foo() {
-  let x = 10;
-  console.log(x); // Output: 10
+  let x = 10
+  console.log(x) // Output: 10
 
   if (true) {
-    let y = 20;
-    console.log(x); // Output: 10
-    console.log(y); // Output: 20
+    let y = 20
+    console.log(x) // Output: 10
+    console.log(y) // Output: 20
   }
 
-  console.log(y); // Error: y is not defined
+  console.log(y) // Error: y is not defined
 }
 
-foo();
+foo()
 ```
 
 In this example, the variables `x` and `y` are declared using the `let` keyword inside the `foo` function. The `x` variable is accessible inside the nested `if` block because it is declared in the outer block. However, the `y` variable is not accessible outside the `if` block.
@@ -72,11 +72,11 @@ Note that variables declared with `const` are also block-scoped, but they cannot
 Here's an example:
 
 ```jsx
-let x = 10;
-x = 20; // Valid
+let x = 10
+x = 20 // Valid
 
-const y = 30;
-y = 40; // Invalid
+const y = 30
+y = 40 // Invalid
 ```
 
 In this example, the variable `x` is declared using `let` and is assigned the value `10`. It is then reassigned to `20`, which is valid.
@@ -89,10 +89,10 @@ In ES5 JavaScript, you can define a function using the `function` keyword. Here'
 
 ```jsx
 function myFunction(x, y) {
-  return x + y;
+  return x + y
 }
 
-console.log(myFunction(1, 2)); // Output: 3
+console.log(myFunction(1, 2)) // Output: 3
 ```
 
 In this example, `myFunction` is defined using the `function` keyword. It takes two parameters, `x` and `y`, and returns their sum. The function is then called with the arguments `1` and `2`, and the result is logged to the console.
@@ -105,10 +105,10 @@ In ES6 JavaScript, you can define a function using arrow function syntax. Here's
 
 ```jsx
 const myFunction = (x, y) => {
-  return x + y;
-};
+  return x + y
+}
 
-console.log(myFunction(1, 2)); // Output: 3
+console.log(myFunction(1, 2)) // Output: 3
 ```
 
 This is same example as previous declared with arrow function.
@@ -122,26 +122,26 @@ In ES5 JavaScript, string manipulation capabilities are more limited compared to
 1. Concatenation: You can concatenate strings using the `+` operator. Here's an example:
 
 ```jsx
-var str1 = 'Hello';
-var str2 = 'world';
-var message = str1 + ' ' + str2;
-console.log(message); // Output: "Hello world"
+var str1 = 'Hello'
+var str2 = 'world'
+var message = str1 + ' ' + str2
+console.log(message) // Output: "Hello world"
 ```
 
 1. Substring: You can extract a substring from a string using the `substring()` method. Here's an example:
 
 ```jsx
-var str = 'Hello, world!';
-var substr = str.substring(0, 5);
-console.log(substr); // Output: "Hello"
+var str = 'Hello, world!'
+var substr = str.substring(0, 5)
+console.log(substr) // Output: "Hello"
 ```
 
 1. Replace: You can replace a substring in a string using the `replace()` method. Here's an example:
 
 ```jsx
-var str = 'Hello, world!';
-var newStr = str.replace('world', 'John');
-console.log(newStr); // Output: "Hello, John!"
+var str = 'Hello, world!'
+var newStr = str.replace('world', 'John')
+console.log(newStr) // Output: "Hello, John!"
 ```
 
 - Note that ES5 does not have methods like `startsWith()`, `endsWith()`, `includes()`, and `repeat()` that were introduced in ES6.
@@ -151,11 +151,11 @@ console.log(newStr); // Output: "Hello, John!"
 In ES6 JavaScript, template literals provide an easy way to perform string interpolation and create multiline strings. Here's an example:
 
 ```jsx
-const name = 'John';
-const age = 30;
+const name = 'John'
+const age = 30
 const message = `My name is ${name} and I am ${age} years old.
-I live in New York City.`;
-console.log(message);
+I live in New York City.`
+console.log(message)
 ```
 
 In this example, a template literal is used to create a string that contains variables `name` and `age`. The variables are inserted into the string using `${}` syntax. The template literal also allows for the creation of a multiline string.
@@ -169,14 +169,14 @@ In ES5 JavaScript, callback-based patterns are commonly used for handling asynch
 ```jsx
 function fetchData(callback) {
   setTimeout(function () {
-    const data = { name: 'John', age: 30 };
-    callback(data);
-  }, 1000);
+    const data = { name: 'John', age: 30 }
+    callback(data)
+  }, 1000)
 }
 
 fetchData(function (data) {
-  console.log(data);
-});
+  console.log(data)
+})
 ```
 
 In this example, the `fetchData` function simulates an asynchronous operation using `setTimeout`. It takes a callback function as a parameter, which it calls with the data after the timeout has elapsed.
@@ -193,19 +193,19 @@ In ES6 JavaScript, `Promise` provides a structured approach for handling asynchr
 function fetchData() {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
-      const data = { name: 'John', age: 30 };
-      resolve(data);
-    }, 1000);
-  });
+      const data = { name: 'John', age: 30 }
+      resolve(data)
+    }, 1000)
+  })
 }
 
 fetchData()
   .then(function (data) {
-    console.log(data);
+    console.log(data)
   })
   .catch(function (error) {
-    console.error(error);
-  });
+    console.error(error)
+  })
 ```
 
 In this example, the `fetchData` function returns a new `Promise` object. The `Promise` constructor takes a function with two parameters, `resolve` and `reject`. Inside the function, an asynchronous operation is simulated using `setTimeout`. When the operation is complete, the `resolve` function is called with the data.
@@ -227,31 +227,31 @@ De-structuring is a way to extract values from arrays or objects and assign them
 De-structuring an array:
 
 ```jsx
-const myArray = [1, 2, 3];
-const [a, b, c] = myArray;
-console.log(a); // Output: 1
-console.log(b); // Output: 2
-console.log(c); // Output: 3
+const myArray = [1, 2, 3]
+const [a, b, c] = myArray
+console.log(a) // Output: 1
+console.log(b) // Output: 2
+console.log(c) // Output: 3
 ```
 
 De-structuring an object:
 
 ```jsx
-const myObject = { x: 1, y: 2, z: 3 };
-const { x, y, z } = myObject;
-console.log(x); // Output: 1
-console.log(y); // Output: 2
-console.log(z); // Output: 3
+const myObject = { x: 1, y: 2, z: 3 }
+const { x, y, z } = myObject
+console.log(x) // Output: 1
+console.log(y) // Output: 2
+console.log(z) // Output: 3
 ```
 
 You can also use destructuring with default values:
 
 ```jsx
-const myObject = { x: 1, y: 2 };
-const { x, y, z = 3 } = myObject;
-console.log(x); // Output: 1
-console.log(y); // Output: 2
-console.log(z); // Output: 3
+const myObject = { x: 1, y: 2 }
+const { x, y, z = 3 } = myObject
+console.log(x) // Output: 1
+console.log(y) // Output: 2
+console.log(z) // Output: 3
 ```
 
 ## Spread Operator (`…`)
@@ -261,49 +261,49 @@ The spread operator (`...`) is used to expand an iterable (like an array or a st
 Expanding an array:
 
 ```jsx
-const myArray = [1, 2, 3];
-console.log(...myArray); // Output: 1 2 3
+const myArray = [1, 2, 3]
+console.log(...myArray) // Output: 1 2 3
 ```
 
 Combining arrays:
 
 ```jsx
-const array1 = [1, 2, 3];
-const array2 = [4, 5, 6];
-const combinedArray = [...array1, ...array2];
-console.log(combinedArray); // Output: [1, 2, 3, 4, 5, 6]
+const array1 = [1, 2, 3]
+const array2 = [4, 5, 6]
+const combinedArray = [...array1, ...array2]
+console.log(combinedArray) // Output: [1, 2, 3, 4, 5, 6]
 ```
 
 Copying an array:
 
 ```jsx
-const originalArray = [1, 2, 3];
-const copiedArray = [...originalArray];
-console.log(copiedArray); // Output: [1, 2, 3]
+const originalArray = [1, 2, 3]
+const copiedArray = [...originalArray]
+console.log(copiedArray) // Output: [1, 2, 3]
 ```
 
 Expanding a string:
 
 ```jsx
-const myString = 'hello';
-console.log(...myString); // Output: h e l l o
+const myString = 'hello'
+console.log(...myString) // Output: h e l l o
 ```
 
 Passing arguments to a function:
 
 ```jsx
 function myFunction(x, y, z) {
-  console.log(x, y, z);
+  console.log(x, y, z)
 }
-const myArray = [1, 2, 3];
-myFunction(...myArray); // Output: 1 2 3
+const myArray = [1, 2, 3]
+myFunction(...myArray) // Output: 1 2 3
 ```
 
 Creating a new object with properties from an existing object:
 
 ```jsx
-const myObject = { x: 1, y: 2 };
-const myNewObject = { ...myObject, z: 3 };
+const myObject = { x: 1, y: 2 }
+const myNewObject = { ...myObject, z: 3 }
 ```
 
 ## Async/Await syntax
@@ -313,15 +313,15 @@ const myNewObject = { ...myObject, z: 3 };
 ```jsx
 async function fetchData() {
   try {
-    const response = await fetch('https://api.example.com/data');
-    const data = await response.json();
-    console.log(data);
+    const response = await fetch('https://api.example.com/data')
+    const data = await response.json()
+    console.log(data)
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
 }
 
-fetchData();
+fetchData()
 ```
 
 In this example, the `fetchData` function is declared as an `async` function. It uses the `await` keyword to wait for the `fetch` function to return a response, and then waits for the response to be converted to JSON using the `json` method. The function then logs the data to the console.

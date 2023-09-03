@@ -1,58 +1,61 @@
 ---
-import Layout from '~/layouts/Default.astro';
-import PostCard from '~/components/blogs/PostCard.astro';
-import type { GetStaticPathsOptions } from 'astro';
-import { BLOG, SITE } from '~/config.mjs';
-import { fetchPosts } from '~/utils/blog';
-import { BLOG_BASE } from '~/utils/permalinks';
-import Pagination from '~/components/blogs/Pagination.astro';
+import Layout from '@/layouts/DefaultLayout.astro'
+import PostCard from '@/components/blogs/PostCard.astro'
+import type { GetStaticPathsOptions } from 'astro'
+import { BLOG, SITE } from '@/config.mjs'
+import { fetchPosts } from '@/utils/blogs'
+import { BLOG_BASE } from '@/utils/functions'
+import Pagination from '@/components/blogs/Pagination.astro'
+import { Post } from '../../types'
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  if (BLOG?.disabled || BLOG?.list?.disabled) return [];
+  if (BLOG?.disabled || BLOG?.list?.disabled) return []
   return paginate(await fetchPosts(), {
     params: { blog: BLOG_BASE || 'blog' },
-    pageSize: BLOG.postsPerPage,
-  });
+    pageSize: BLOG.postsPerPage
+  })
 }
 
-const { page } = Astro.props;
-const currentPage = page.currentPage ?? 1;
+const { page } = Astro.props
+const currentPage = page.currentPage ?? 1
 
 const meta = {
   title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   description: SITE.description,
   noindex: BLOG?.list?.noindex || currentPage > 1,
-  ogType: 'blog',
-};
+  ogType: 'blog'
+}
 ---
 
 <Layout {meta}>
-  <div class="container mx-auto">
-  <section class="flex relative">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap justify-center -mx-4 mt-28 mb-5">
-        <h1 class="text-5xl font-bold uppercase">My Blog</h1>
+  <div class='container mx-auto'>
+    <section class='flex relative'>
+      <div class='container mx-auto'>
+        <div class='flex flex-wrap justify-center -mx-4 mt-28 mb-5'>
+          <h1 class='text-5xl font-bold uppercase'>My Blog</h1>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="p-5">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center">
-      {
-        page.data.map((post: any) => (
-          <PostCard
-            category={post.category}
-            title={post.title}
-            description={post.description}
-            date={post.pubDate}
-            image={post.heroImage}
-            slug={post.slug}
-          />
-        ))
-      }
-    </div>
-  </section>
-  <section class="p-5">
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-  </section>
+    </section>
+    <section class='p-5'>
+      <div
+        class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center'
+      >
+        {
+          page.data.map((post: Post) => (
+            <PostCard
+              category={post.category}
+              title={post.title}
+              description={post.description}
+              date={post.publishedDate}
+              image={post.heroImage}
+              slug={post.slug}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <section class='p-5'>
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    </section>
   </div>
 </Layout>

@@ -1,3 +1,3 @@
-import { atom } from 'nanostores';
+import { atom } from 'nanostores'
 
-export const $theme = atom<string>(localStorage.getItem('theme') || 'dark');
+export const $theme = atom<string>('dark')

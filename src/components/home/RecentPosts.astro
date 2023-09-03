@@ -1,17 +1,23 @@
 ---
-import {findLatestPosts} from "~/utils/blog";
-import PostCard from "~/components/blogs/PostCard.astro";
-import type { Post } from "~/types";
+import { findLatestPosts } from '@/utils/blogs'
+import PostCard from '@/components/blogs/PostCard.astro'
+import type { Post } from '@/types'
 
-const latestPosts = await findLatestPosts({ count: 3 });
+const latestPosts = await findLatestPosts({ count: 3 })
 ---
 
-<section class="snap-start md:h-screen border-t-2 border-accent flex justify-center items-center bg-info-content/10">
-  <div class="container mx-auto">
-    <div class="flex flex-wrap justify-center">
-      <h1 class="text-5xl font-bold uppercase -mx-4 mt-32 mb-5">Recent Posts</h1>
-      <section class="p-5 mt-5">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center">
+<section
+  class='snap-start md:h-screen border-t-2 border-accent flex justify-center items-center bg-info-content/10'
+>
+  <div class='container mx-auto'>
+    <div class='flex flex-wrap justify-center'>
+      <h1 class='text-5xl font-bold uppercase -mx-4 mt-32 mb-5'>
+        Recent Posts
+      </h1>
+      <section class='p-5 mt-5'>
+        <div
+          class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 place-content-center'
+        >
           {
             latestPosts.map((post: Post) => (
               <PostCard
@@ -25,8 +31,9 @@ const latestPosts = await findLatestPosts({ count: 3 });
           }
         </div>
       </section>
-      <a href="/blog/" class="btn btn-outline btn-wide items-center mt-5 mb-12">More Posts</a>
+      <a href='/blog/' class='btn btn-outline btn-wide items-center mt-5 mb-12'
+        >More Posts</a
+      >
     </div>
-    
   </div>
 </section>
