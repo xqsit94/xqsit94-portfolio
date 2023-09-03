@@ -3,8 +3,8 @@ export const SITE = {
   description:
     'Lifeofdev is a web development blog where I share my journey as a software engineer. Join me as I document my experiences, insights, and lessons learned while working with Laravel, Vue.js, Node.js, and more.',
 
-  origin: 'https://xqsit94.github.io',
-  basePathname: '/xqsit94-portfolio',
+  origin: 'https://lifeofdev.com',
+  basePathname: '/',
   trailingSlash: true,
 
   googleAnalyticsId: 'G-4RT0BMTZHD'
