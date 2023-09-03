@@ -1,16 +1,26 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets'
 
-type Props = CollectionEntry<'post'>['data'];
+interface Props {
+  heroImage?: string
+}
 
-const { heroImage } = Astro.props;
+const { heroImage } = Astro.props
 ---
 
-<div class="container mx-auto px-5 md:px-0 w-full md:w-10/12 lg:w-6/12 font-work">
-  <article class="prose lg:prose-xl mx-auto">
+<div
+  class='container mx-auto px-5 md:px-0 w-full md:w-10/12 lg:w-6/12 font-work'
+>
+  <article class='prose lg:prose-xl mx-auto'>
     {
       heroImage && (
-        <img width={720} height={360} src={heroImage} alt="" class="rounded-xl border-b-8 border-accent" />
+        <Image
+          width={720}
+          height={360}
+          src={heroImage}
+          alt=''
+          class='rounded-xl border-b-8 border-accent'
+        />
       )
     }
     <slot />

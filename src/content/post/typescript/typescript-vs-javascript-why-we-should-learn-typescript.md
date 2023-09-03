@@ -2,7 +2,7 @@
 title: 'Typescript vs Javascript, Why we should learn Typescript'
 category: 'Typescript'
 description: 'One of the main benefits of Typescript is its support for static typing. In Javascript, variables can be assigned any value, regardless of its data type.'
-pubDate: 'Jun 28 2023'
+publishedDate: 'Jun 28 2023'
 updatedDate: 'Jun 28 2023'
 heroImage: '/images/typescript/typescript-vs-javascript-why-we-should-learn-typescript.png'
 tags:
@@ -28,10 +28,10 @@ Here is an example of a simple JavaScript function:
 
 ```javascript
 function addNumbers(a, b) {
-  return a + b;
+  return a + b
 }
 
-console.log(addNumbers(2, 3)); // Output: 5
+console.log(addNumbers(2, 3)) // Output: 5
 ```
 
 In the above example, we have defined a function called `addNumbers` that takes two parameters and returns their sum. However, there is no way to specify the data type of the parameters or the return value. This can lead to errors if the function is called with the wrong data types.
@@ -39,7 +39,7 @@ In the above example, we have defined a function called `addNumbers` that takes 
 For Example:
 
 ```javascript
-console.log(addNumbers('2', '3')); // Output: "23"
+console.log(addNumbers('2', '3')) // Output: "23"
 ```
 
 **To solve this problem, we can use TypeScript.**
@@ -48,10 +48,10 @@ Here is the same function written in TypeScript:
 
 ```typescript
 function addNumbers(a: number, b: number): number {
-  return a + b;
+  return a + b
 }
 
-console.log(addNumbers(2, 3)); // Output: 5
+console.log(addNumbers(2, 3)) // Output: 5
 ```
 
 In the TypeScript version, we have added type annotations to the function parameters and return type. This makes it easier to catch errors at compile-time rather than at runtime. Additionally, TypeScript provides better tooling support, such as code completion and refactoring, which can help improve productivity and reduce errors.
@@ -65,7 +65,7 @@ Typescript supports a range of data types that are similar to those in Javascrip
 The `boolean` data type represents a logical value of either `true` or `false`. For example:
 
 ```typescript
-let isDone: boolean = false;
+let isDone: boolean = false
 ```
 
 ### Number
@@ -73,10 +73,10 @@ let isDone: boolean = false;
 The `number` data type represents numeric values. Typescript supports both decimal and hexadecimal literals, as well as binary and octal literals in ECMAScript 2015 and later.
 
 ```typescript
-let decimal: number = 6;
-let hex: number = 0xf00d;
-let binary: number = 0b1010;
-let octal: number = 0o744;
+let decimal: number = 6
+let hex: number = 0xf00d
+let binary: number = 0b1010
+let octal: number = 0o744
 ```
 
 ### String
@@ -84,8 +84,8 @@ let octal: number = 0o744;
 The `string` data type represents textual data. Typescript supports both single and double quotes for defining string literals.
 
 ```typescript
-let name: string = 'John';
-let message: string = 'Hello, world!';
+let name: string = 'John'
+let message: string = 'Hello, world!'
 ```
 
 ### Array
@@ -93,8 +93,8 @@ let message: string = 'Hello, world!';
 The `array` data type represents a collection of values of the same type. Typescript supports both traditional arrays and generic arrays.
 
 ```typescript
-let list: number[] = [1, 2, 3];
-let genericList: Array<number> = [1, 2, 3];
+let list: number[] = [1, 2, 3]
+let genericList: Array<number> = [1, 2, 3]
 ```
 
 ### Tuple
@@ -102,7 +102,7 @@ let genericList: Array<number> = [1, 2, 3];
 The `tuple` data type represents an array with a fixed number of elements, where each element may be of a different type.
 
 ```typescript
-let tuple: [string, number] = ['John', 30];
+let tuple: [string, number] = ['John', 30]
 ```
 
 ### Enum
@@ -113,10 +113,10 @@ The `enum` data type allows you to define a set of named constants. By default, 
 enum Color {
   Red,
   Green,
-  Blue,
+  Blue
 }
 
-let c: Color = Color.Green;
+let c: Color = Color.Green
 ```
 
 ### Any
@@ -124,9 +124,9 @@ let c: Color = Color.Green;
 The `any` data type represents any value, similar to the `var` keyword in Javascript. This can be useful in situations where you don't know the type of a variable ahead of time.
 
 ```typescript
-let myVariable: any = 'Hello, world!';
-myVariable = 42;
-myVariable = true;
+let myVariable: any = 'Hello, world!'
+myVariable = 42
+myVariable = true
 ```
 
 ### Void
@@ -135,7 +135,7 @@ The `void` data type represents the absence of a value. Functions that do not re
 
 ```typescript
 function logMessage(message: string): void {
-  console.log(message);
+  console.log(message)
 }
 ```
 
@@ -144,8 +144,8 @@ function logMessage(message: string): void {
 The `null` and `undefined` data types represent null and undefined values, respectively.
 
 ```typescript
-let myNull: null = null;
-let myUndefined: undefined = undefined;
+let myNull: null = null
+let myUndefined: undefined = undefined
 ```
 
 ### Object
@@ -153,7 +153,7 @@ let myUndefined: undefined = undefined;
 The `object` data type represents any non-primitive type, such as arrays, functions, and objects.
 
 ```typescript
-let myObject: object = { name: 'John', age: 30 };
+let myObject: object = { name: 'John', age: 30 }
 ```
 
 ## Union Type
@@ -163,7 +163,7 @@ Union types in Typescript allow you to define a variable that can have more than
 To define a union type, you use the `|` symbol to separate the different data types. Here's an example:
 
 ```typescript
-let myVariable: string | number = 'Hello, world!';
+let myVariable: string | number = 'Hello, world!'
 ```
 
 In this example, we define a variable called `myVariable` that can have either a `string` or `number` data type.
@@ -178,16 +178,16 @@ An interface is a way to define a contract for an object, specifying the propert
 
 ```typescript
 interface Person {
-  name: string;
-  age: number;
-  address?: string;
+  name: string
+  age: number
+  address?: string
 }
 ```
 
 In this example, we define a `Person` interface with three properties: `name` of type `string`, `age` of type `number`, and `address` of type `string` (which is optional due to the `?` symbol). You can then use this interface to define a variable of type `Person`:
 
 ```typescript
-let john: Person = { name: 'John', age: 30 };
+let john: Person = { name: 'John', age: 30 }
 ```
 
 ### Class
@@ -196,14 +196,14 @@ A class is a way to define a blueprint for creating objects with specific proper
 
 ```typescript
 class Person {
-  name: string;
-  age: number;
-  address?: string;
+  name: string
+  age: number
+  address?: string
 
   constructor(name: string, age: number, address?: string) {
-    this.name = name;
-    this.age = age;
-    this.address = address;
+    this.name = name
+    this.age = age
+    this.address = address
   }
 }
 ```
@@ -211,7 +211,7 @@ class Person {
 In this example, we define a `Person` class with three properties: `name` of type `string`, `age` of type `number`, and `address` of type `string` (which is optional due to the `?` symbol). We also define a constructor method that takes in these properties and assigns them to the object. You can then use this class to create a new `Person` object:
 
 ```typescript
-let john = new Person('John', 30);
+let john = new Person('John', 30)
 ```
 
 ## Array Data Type
@@ -223,8 +223,8 @@ The `array` data type in Typescript represents a collection of values of the sam
 A traditional array is defined using square brackets `[]` and can contain values of any type:
 
 ```typescript
-let numbers: number[] = [1, 2, 3];
-let names: string[] = ['John', 'Jane', 'Bob'];
+let numbers: number[] = [1, 2, 3]
+let names: string[] = ['John', 'Jane', 'Bob']
 ```
 
 ### Generic Array
@@ -232,17 +232,17 @@ let names: string[] = ['John', 'Jane', 'Bob'];
 A generic array is defined using the `Array` keyword and can also contain values of any type:
 
 ```typescript
-let numbers: Array<number> = [1, 2, 3];
-let names: Array<string> = ['John', 'Jane', 'Bob'];
+let numbers: Array<number> = [1, 2, 3]
+let names: Array<string> = ['John', 'Jane', 'Bob']
 ```
 
 You can also define a generic array with a specific length:
 
 ```typescript
-let numbers: Array<number> = new Array(3);
-numbers[0] = 1;
-numbers[1] = 2;
-numbers[2] = 3;
+let numbers: Array<number> = new Array(3)
+numbers[0] = 1
+numbers[1] = 2
+numbers[2] = 3
 ```
 
 ## Enums
@@ -255,7 +255,7 @@ Here's an example of an enum for different colors:
 enum Color {
   Red,
   Green,
-  Blue,
+  Blue
 }
 ```
 
@@ -264,7 +264,7 @@ In this example, we define an `enum` called `Color` with three named constants: 
 You can then use this enum to define a variable of type `Color`:
 
 ```typescript
-let myColor: Color = Color.Green;
+let myColor: Color = Color.Green
 ```
 
 In this example, we define a variable called `myColor` of type `Color` and assign it the value `Green`.
@@ -275,7 +275,7 @@ You can also assign your own values to the named constants in an enum:
 enum Color {
   Red = 1,
   Green = 2,
-  Blue = 4,
+  Blue = 4
 }
 ```
 
@@ -287,7 +287,7 @@ You can also use enums with string values:
 enum Color {
   Red = 'red',
   Green = 'green',
-  Blue = 'blue',
+  Blue = 'blue'
 }
 ```
 

@@ -1,38 +1,43 @@
 ---
-import { getPermalink } from '~/utils/permalinks';
+import { getPermalink } from '@/utils/functions'
 
-import { BLOG } from '~/config.mjs';
-import type { Post } from '~/types';
+import { BLOG } from '@/config.mjs'
+import type { Post } from '@/types'
 
 export interface Props {
-  tags: Post['tags'];
-  class?: string;
-  title?: string | undefined;
-  isCategory?: boolean;
+  tags: Post['tags']
+  class?: string
+  title?: string | undefined
+  isCategory?: boolean
 }
 
-const { tags, class: className = 'text-sm', title = undefined, isCategory = false } = Astro.props;
+const {
+  tags,
+  class: className = 'text-sm',
+  title = undefined,
+  isCategory = false
+} = Astro.props
 ---
 
-<div class="flex flex-col justify-between max-w-3xl mx-auto sm:flex-row mt-8">
+<div class='flex flex-col justify-between max-w-3xl mx-auto sm:flex-row mt-8'>
   {
     tags && Array.isArray(tags) && (
       <>
         <>
           {title !== undefined && (
-            <span class="align-super font-normal underline underline-offset-4 decoration-2 dark:text-slate-400">
+            <span class='align-super font-normal underline underline-offset-4 decoration-2 dark:text-slate-400'>
               {title}
             </span>
           )}
         </>
         <ul class={className}>
           {tags.map((tag) => (
-            <li class="inline-block mr-1 mb-2 py-0.5 px-2 lowercase font-medium">
+            <li class='inline-block mr-1 mb-2 py-0.5 px-2 lowercase font-medium'>
               {BLOG?.tag?.disabled ? (
                 tag
               ) : (
                 <a href={getPermalink(tag, isCategory ? 'category' : 'tag')}>
-                  <button class="btn btn-outline btn-sm"># {tag}</button>
+                  <button class='btn btn-outline btn-sm'># {tag}</button>
                 </a>
               )}
             </li>

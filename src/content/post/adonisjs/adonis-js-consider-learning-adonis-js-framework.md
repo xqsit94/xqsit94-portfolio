@@ -2,7 +2,7 @@
 title: 'What is Adonis JS - Why You Should Consider Learning Adonis JS Framework'
 category: 'AdonisJS'
 description: 'Adonis JS is a powerful framework for Node.js that allows developers to build scalable and maintainable web applications and api servers with ease.'
-pubDate: 'Jul 03 2023'
+publishedDate: 'Jul 03 2023'
 updatedDate: 'Jul 03 2023'
 heroImage: '/images/adonisjs/adonis-js-consider-learning-adonis-js-framework.png'
 tags:

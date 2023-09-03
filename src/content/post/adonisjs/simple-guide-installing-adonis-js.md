@@ -2,7 +2,7 @@
 title: 'A Simple Guide to Installing Adonis JS 5'
 category: 'AdonisJS'
 description: 'Adonis JS 5 is a powerful JavaScript framework that allows developers to build robust and scalable web applications. This article will provide you with an easy-to-follow guide on installing Adonis JS 5.'
-pubDate: 'Jul 11 2023'
+publishedDate: 'Jul 11 2023'
 updatedDate: 'Jul 11 2023'
 heroImage: '/images/adonisjs/simple-guide-installing-adonis-js.png'
 tags:

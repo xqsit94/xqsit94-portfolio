@@ -2,7 +2,7 @@
 title: 'Why Laravel? The Best PHP Framework for Modern Web Development'
 category: 'Laravel'
 description: 'Laravel is the best PHP framework that makes it easy to build modern web applications. It has a clean and expressive syntax, rapid development capabilities, and a comprehensive ecosystem.'
-pubDate: 'Jul 15 2023'
+publishedDate: 'Jul 15 2023'
 updatedDate: 'Jul 15 2023'
 heroImage: '/images/laravel/laravel-best-php-framework-modern-web-development.png'
 tags:

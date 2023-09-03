@@ -1,23 +1,23 @@
 ---
-import SinglePost from '~/components/blogs/SinglePost.astro';
-import { BLOG } from '~/config.mjs';
-import Layout from '~/layouts/PageLayout.astro';
-import { fetchPosts } from '~/utils/blog';
-import { findImage } from '~/utils/images';
-import { getCanonical, getPermalink } from '~/utils/permalinks';
+import SinglePost from '@/components/blogs/SinglePost.astro'
+import { BLOG } from '@/config.mjs'
+import Layout from '@/layouts/PageLayout.astro'
+import { fetchPosts } from '@/utils/blogs'
+import { findImage } from '@/utils/images'
+import { getCanonical, getPermalink } from '@/utils/functions'
 
 export async function getStaticPaths() {
-  if (BLOG?.disabled || BLOG?.post?.disabled) return [];
+  if (BLOG?.disabled || BLOG?.post?.disabled) return []
   return (await fetchPosts()).map((post) => ({
     params: {
-      blog: post.permalink,
+      blog: post.permalink
     },
-    props: { post },
-  }));
+    props: { post }
+  }))
 }
 
-const { post } = Astro.props;
-const url = getCanonical(getPermalink(post.permalink, 'post'));
+const { post } = Astro.props
+const url = getCanonical(getPermalink(post.permalink, 'post'))
 
 const meta = {
   title: post.title,
@@ -25,8 +25,8 @@ const meta = {
   canonical: post.canonical || url,
   image: await findImage(post.image),
   noindex: BLOG?.post?.noindex,
-  ogType: 'article',
-};
+  ogType: 'article'
+}
 ---
 
 <Layout {meta}>

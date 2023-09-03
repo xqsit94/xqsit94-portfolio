@@ -4,7 +4,7 @@ import AppHeader from '@/components/shared/AppHeader.astro'
 import AppFooter from '@/components/shared/AppFooter.astro'
 import type { MetaSEO } from '@/types'
 
-interface Props {
+export interface Props {
   meta?: MetaSEO
 }
 
@@ -13,7 +13,7 @@ const { meta } = Astro.props
 
 <BaseLayout {meta}>
   <AppHeader />
-  <main class='main mt-28 mb-10'>
+  <main class='main'>
     <slot />
   </main>
   <AppFooter />

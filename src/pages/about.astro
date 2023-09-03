@@ -1,20 +1,20 @@
 ---
-import type { MetaSEO } from '~/types';
-import SinglePage from '~/components/blogs/SinglePage.astro';
-import Layout from '~/layouts/PageLayout.astro';
+import type { MetaSEO } from '@/types'
+import Layout from '@/layouts/PageLayout.astro'
+import SinglePage from '@/components/blogs/SinglePage.astro'
 
 const meta: MetaSEO = {
   title: 'About Me - Manikandan B (xqsit94)',
   description:
     "Hello I'm Manikandan B, I'm a passionate software engineer with a keen interest in web development. I've created this space to document my learning journey and share my insights and experiences with you.",
-  image: '/xqsit94-about.png',
-};
+  image: '/xqsit94-about.png'
+}
 ---
 
 <Layout {meta}>
   <SinglePage
     title={meta.title!}
-    category="About"
+    category='About'
     description={meta.description!}
     pubDate={new Date('June 28 2023')}
     updatedDate={new Date('June 08 2023')}
@@ -22,41 +22,53 @@ const meta: MetaSEO = {
   >
     <p>Welcome to LIFEOFDEV!</p>
     <p>
-      Hey there, I'm thrilled to have you visit my blog. My name is Manikandan, and I'm a passionate software engineer
-      with a keen interest in web development. I've created this space to document my learning journey and share my
-      insights and experiences with you.
+      Hey there, I'm thrilled to have you visit my blog. My name is Manikandan,
+      and I'm a passionate software engineer with a keen interest in web
+      development. I've created this space to document my learning journey and
+      share my insights and experiences with you.
     </p>
 
     <p>
-      With a solid background in web development, I specialize in working with the Laravel Framework, Vue.js, Node.js,
-      and have a strong foundation in spring boot. These technologies have become my go-to tools for building robust and
-      efficient web applications. I love the process of transforming ideas into tangible, user-friendly software
-      solutions that make a difference.
+      With a solid background in web development, I specialize in working with
+      the Laravel Framework, Vue.js, Node.js, and have a strong foundation in
+      spring boot. These technologies have become my go-to tools for building
+      robust and efficient web applications. I love the process of transforming
+      ideas into tangible, user-friendly software solutions that make a
+      difference.
     </p>
 
     <p>
-      Currently, I am working at Oreala, a prominent software development company where I get to put my skills to the
-      test daily. The dynamic and challenging environment keeps me on my toes, constantly pushing me to learn and grow
-      in my field.
+      Currently, I am working at Oreala, a prominent software development
+      company where I get to put my skills to the test daily. The dynamic and
+      challenging environment keeps me on my toes, constantly pushing me to
+      learn and grow in my field.
     </p>
 
     <p>
-      Hailing from Chennai, India, I draw inspiration from the vibrant tech community around me. This city has given me
-      the opportunity to meet talented individuals and be part of exciting projects that have fueled my passion for
-      software engineering.
+      Hailing from Chennai, India, I draw inspiration from the vibrant tech
+      community around me. This city has given me the opportunity to meet
+      talented individuals and be part of exciting projects that have fueled my
+      passion for software engineering.
     </p>
 
     <p>
-      On this blog, I want to take you on a journey through my experiences, sharing the lessons I've learned, the
-      challenges I've faced, and the solutions I've discovered along the way. I believe in the power of knowledge
-      sharing, and my aim is to contribute to the tech community by providing valuable insights and practical advice.
+      On this blog, I want to take you on a journey through my experiences,
+      sharing the lessons I've learned, the challenges I've faced, and the
+      solutions I've discovered along the way. I believe in the power of
+      knowledge sharing, and my aim is to contribute to the tech community by
+      providing valuable insights and practical advice.
     </p>
     <p>
-      Whether you're an aspiring developer, a fellow software engineer, or simply someone curious about the world of web
-      development, I hope you'll find something valuable and inspiring here. Feel free to explore my blog posts, leave
-      comments, and engage in discussions. Together, we can foster a supportive and collaborative community.
+      Whether you're an aspiring developer, a fellow software engineer, or
+      simply someone curious about the world of web development, I hope you'll
+      find something valuable and inspiring here. Feel free to explore my blog
+      posts, leave comments, and engage in discussions. Together, we can foster
+      a supportive and collaborative community.
     </p>
-    <p>Thank you for joining me on this exciting adventure. Let's learn, grow, and create amazing things together!</p>
+    <p>
+      Thank you for joining me on this exciting adventure. Let's learn, grow,
+      and create amazing things together!
+    </p>
     <p>Best regards,</p>
     <div>Manikandan B</div>
     <div>LIFEOFDEV</div>

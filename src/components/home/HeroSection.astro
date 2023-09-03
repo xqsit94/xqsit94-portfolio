@@ -1,28 +1,39 @@
 ---
-import { Slider } from "~/components/home/Slider";
+import { Slider } from '@/components/home/Slider'
 ---
 
-<section class="snap-start h-screen flex justify-center items-center">
-  <div class="container mx-auto">
-    <div class="hero-content">
-      <div class="flex md:flex-row flex-col-reverse justify-between">
-        <div class="text-center lg:text-left w-full lg:w-2/4">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold">
-            Hi 👋 I'm<span class="block md:inline-block pl-2 lg:pl-0 text-accent">Manikandan.</span>
+<section class='snap-start h-screen flex justify-center items-center'>
+  <div class='container mx-auto'>
+    <div class='hero-content'>
+      <div class='flex md:flex-row flex-col-reverse justify-between'>
+        <div class='text-center lg:text-left w-full lg:w-2/4'>
+          <h1 class='text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold'>
+            Hi 👋 I'm<span
+              class='block md:inline-block pl-2 lg:pl-0 text-accent'
+              >Manikandan.</span
+            >
           </h1>
-          <p class="pt-2 md:pt-6 text-2xl xl:text-[2rem] xl:leading-[54px] tracking-[-0.3px]">
-            <span id="element"></span>
+          <p
+            class='pt-2 md:pt-6 text-2xl xl:text-[2rem] xl:leading-[54px] tracking-[-0.3px]'
+          >
+            <span id='element'></span>
           </p>
-          <p class="text-2xl xl:text-[2rem] xl:leading-[54px] tracking-[-0.3px]">
+          <p
+            class='text-2xl xl:text-[2rem] xl:leading-[54px] tracking-[-0.3px]'
+          >
             with a passion for crafting exceptional web experience.
           </p>
-          <div class="mt-10 flex md:flex-row flex-col gap-6 items-center">
-            <button class="btn btn-outline btn-accent btn-wide">Write Me</button>
-            <button class="btn btn-outline btn-info btn-wide">Resume</button>
+          <div class='mt-10 flex md:flex-row flex-col gap-6 items-center'>
+            <button class='btn btn-outline btn-accent btn-wide'>Write Me</button
+            >
+            <button class='btn btn-outline btn-info btn-wide'>Resume</button>
           </div>
         </div>
-        <div class="h-[40vh] lg:h-auto w-full lg:w-2/4">
-          <Slider client:idle className="h-full lg:w-[360px] 2xl:w-[600px] mx-auto p-20 md:p-7" />
+        <div class='h-[40vh] lg:h-auto w-full lg:w-2/4'>
+          <Slider
+            client:idle
+            className='h-full lg:w-[360px] 2xl:w-[600px] mx-auto p-20 md:p-7'
+          />
         </div>
       </div>
     </div>
@@ -30,18 +41,18 @@ import { Slider } from "~/components/home/Slider";
 </section>
 
 <script>
-import Typed from 'typed.js';
+  import Typed from 'typed.js'
 
-new Typed('#element', {
-  strings: [
-    `A full-stack web developer from India`,
-    `A modern <span class="text-error text-4xl">Vue.js</span> developer`,
-    `A modern <span class="text-info text-4xl">Laravel</span> developer`,
-    `A modern <span class="text-warning text-4xl">React</span> developer`,
-    'An awesome <span class="text-accent text-4xl">UI/UX</span> designer',
-  ],
-  typeSpeed: 70,
-  backSpeed: 50,
-  loop: true,
-});
+  new Typed('#element', {
+    strings: [
+      `A full-stack web developer from India`,
+      `A modern <span class="text-error text-4xl">Vue.js</span> developer`,
+      `A modern <span class="text-info text-4xl">Laravel</span> developer`,
+      `A modern <span class="text-warning text-4xl">React</span> developer`,
+      'An awesome <span class="text-accent text-4xl">UI/UX</span> designer'
+    ],
+    typeSpeed: 70,
+    backSpeed: 50,
+    loop: true
+  })
 </script>

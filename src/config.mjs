@@ -7,8 +7,8 @@ export const SITE = {
   basePathname: '/',
   trailingSlash: true,
 
-  googleAnalyticsId: 'G-4RT0BMTZHD',
-};
+  googleAnalyticsId: 'G-4RT0BMTZHD'
+}
 
 export const BLOG = {
   disabled: false,
@@ -25,30 +25,30 @@ export const BLOG = {
     inputPosition: 'top',
     lang: 'en',
     loading: 'lazy',
-    theme: 'transparent_dark',
+    theme: 'transparent_dark'
   },
 
   post: {
     permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
     noindex: false,
-    disabled: false,
+    disabled: false
   },
 
   list: {
     pathname: 'blog', // Blog main path, you can change this to "articles" (/articles)
     noindex: false,
-    disabled: false,
+    disabled: false
   },
 
   category: {
     pathname: 'category', // Category main path /category/some-category
     noindex: true,
-    disabled: false,
+    disabled: false
   },
 
   tag: {
     pathname: 'tag', // Tag main path /tag/some-tag
     noindex: true,
-    disabled: false,
-  },
-};
+    disabled: false
+  }
+}

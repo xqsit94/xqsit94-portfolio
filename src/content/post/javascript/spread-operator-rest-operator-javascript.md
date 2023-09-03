@@ -2,7 +2,7 @@
 title: 'Spread Operator and Rest Operator in Javascript'
 category: 'Javascript'
 description: 'The Spread operator, represented by three dots ( ... ). The Rest operator, also represented by three dots ( ... ), works in the opposite way to the Spread operator.'
-pubDate: 'Aug 05 2023'
+publishedDate: 'Aug 05 2023'
 updatedDate: 'Aug 05 2023'
 heroImage: '/images/javascript/spread-operator-rest-operator-javascript.png'
 tags:
@@ -24,39 +24,39 @@ Use Cases:
 ### 1.1 Merging Arrays:
 
 ```jsx
-const array1 = [1, 2, 3];
-const array2 = [4, 5, 6];
+const array1 = [1, 2, 3]
+const array2 = [4, 5, 6]
 
-const mergedArray = [...array1, ...array2];
+const mergedArray = [...array1, ...array2]
 
-console.log(mergedArray); // Output: [1, 2, 3, 4, 5, 6]
+console.log(mergedArray) // Output: [1, 2, 3, 4, 5, 6]
 ```
 
 ### 1.2 Copying Arrays and Objects:
 
 ```jsx
-const originalArray = [1, 2, 3];
-const copyOfArray = [...originalArray];
+const originalArray = [1, 2, 3]
+const copyOfArray = [...originalArray]
 
-console.log(copyOfArray); // Output: [1, 2, 3]
+console.log(copyOfArray) // Output: [1, 2, 3]
 
-const originalObject = { name: 'John', age: 30 };
-const copyOfObject = { ...originalObject };
+const originalObject = { name: 'John', age: 30 }
+const copyOfObject = { ...originalObject }
 
-console.log(copyOfObject); // Output: { name: 'John', age: 30 }
+console.log(copyOfObject) // Output: { name: 'John', age: 30 }
 ```
 
 ### 1.3 Function Arguments:
 
 ```jsx
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 function sum(a, b, c, d, e) {
-  return a + b + c + d + e;
+  return a + b + c + d + e
 }
 
-const result = sum(...numbers);
-console.log(result); // Output: 15
+const result = sum(...numbers)
+console.log(result) // Output: 15
 ```
 
 ## 2. Exploring the Rest Operator:
@@ -69,12 +69,12 @@ Use Cases:
 
 ```jsx
 function displayNames(first, last, ...middle) {
-  console.log(`First Name: ${first}`);
-  console.log(`Last Name: ${last}`);
-  console.log(`Middle Names: ${middle.join(', ')}`);
+  console.log(`First Name: ${first}`)
+  console.log(`Last Name: ${last}`)
+  console.log(`Middle Names: ${middle.join(', ')}`)
 }
 
-displayNames('John', 'Doe', 'David', 'Michael', 'Smith');
+displayNames('John', 'Doe', 'David', 'Michael', 'Smith')
 
 /*
 Output:
@@ -87,12 +87,12 @@ Middle Names: David, Michael, Smith
 ### 2.2 Collecting Remaining Array Elements:
 
 ```jsx
-const fruits = ['apple', 'banana', 'orange', 'grape'];
+const fruits = ['apple', 'banana', 'orange', 'grape']
 
-const [firstFruit, ...remainingFruits] = fruits;
+const [firstFruit, ...remainingFruits] = fruits
 
-console.log(firstFruit); // Output: apple
-console.log(remainingFruits); // Output: ['banana', 'orange', 'grape']
+console.log(firstFruit) // Output: apple
+console.log(remainingFruits) // Output: ['banana', 'orange', 'grape']
 ```
 
 ## Conclusion:

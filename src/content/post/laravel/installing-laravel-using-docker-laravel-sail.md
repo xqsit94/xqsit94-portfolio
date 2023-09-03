@@ -2,7 +2,7 @@
 title: 'Installing Laravel using Docker and Laravel Sail'
 category: 'Laravel'
 description: 'Simple guide to install Laravel using Docker and Laravel Sail. Laravel Sail is a lightweight command-line interface (CLI) for managing Laravel applications using Docker.'
-pubDate: 'Aug 05 2023'
+publishedDate: 'Aug 05 2023'
 updatedDate: 'Aug 05 2023'
 heroImage: '/images/laravel/installing-laravel-using-docker-laravel-sail.png'
 tags:

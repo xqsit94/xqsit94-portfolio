@@ -2,7 +2,7 @@
 title: 'Asynchronous JavaScript: Simplifying Complex Tasks with Async/Await'
 category: 'Javascript'
 description: 'Async/Await, introduced in ES2017, has become a game-changer in asynchronous programming. This feature allows developers to write asynchronous code in a more synchronous and readable manner.'
-pubDate: 'Aug 11 2023'
+publishedDate: 'Aug 11 2023'
 updatedDate: 'Aug 11 2023'
 heroImage: '/images/javascript/asynchronous-javascript-simplifying-complex-tasks-async-await.png'
 tags:
@@ -22,31 +22,31 @@ Fetching data from an API is a common asynchronous operation. Async/Await makes 
 
 ```jsx
 const fetchWeatherData = async (city) => {
-  const apiUrl = `https://api.weather.example.com/forecast/${city}`;
+  const apiUrl = `https://api.weather.example.com/forecast/${city}`
 
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl)
 
     if (response.status === 200) {
-      const data = await response.json();
-      return data;
+      const data = await response.json()
+      return data
     } else {
-      throw new Error('Unable to fetch weather data.');
+      throw new Error('Unable to fetch weather data.')
     }
   } catch (error) {
-    throw error;
+    throw error
   }
-};
+}
 
 // Usage
-(async () => {
+;(async () => {
   try {
-    const data = await fetchWeatherData('New York');
-    console.log(data);
+    const data = await fetchWeatherData('New York')
+    console.log(data)
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-})();
+})()
 ```
 
 ## Chaining Multiple Async/Await Functions
@@ -58,16 +58,16 @@ Async/Await allows you to chain multiple asynchronous operations in a more linea
 ```jsx
 const fetchAndProcessWeather = async (city) => {
   try {
-    const data = await fetchWeatherData(city);
-    const processedData = await processWeatherData(data);
-    console.log('Processed Weather Data:', processedData);
+    const data = await fetchWeatherData(city)
+    const processedData = await processWeatherData(data)
+    console.log('Processed Weather Data:', processedData)
   } catch (error) {
-    console.error('An error occurred:', error);
+    console.error('An error occurred:', error)
   }
-};
+}
 
 // Usage
-fetchAndProcessWeather('London');
+fetchAndProcessWeather('London')
 ```
 
 ## Handling Parallel Async Operations
@@ -79,20 +79,20 @@ Async/Await also simplifies handling multiple asynchronous tasks running in para
 ```jsx
 const fetchMultipleWeatherData = async (cities) => {
   const promises = cities.map(async (city) => {
-    const data = await fetchWeatherData(city);
-    return data;
-  });
+    const data = await fetchWeatherData(city)
+    return data
+  })
 
   try {
-    const results = await Promise.all(promises);
-    console.log('Fetched Weather Data for Multiple Cities:', results);
+    const results = await Promise.all(promises)
+    console.log('Fetched Weather Data for Multiple Cities:', results)
   } catch (error) {
-    console.error('An error occurred:', error);
+    console.error('An error occurred:', error)
   }
-};
+}
 
 // Usage
-fetchMultipleWeatherData(['New York', 'London', 'Tokyo']);
+fetchMultipleWeatherData(['New York', 'London', 'Tokyo'])
 ```
 
 ## Conclusion:

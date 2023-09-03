@@ -1,32 +1,34 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import FormattedDate from '~/components/FormattedDate.astro';
-import PostTags from '~/components/blogs/PostTags.astro';
-import Comments from '~/components/blogs/Comments';
+import { Image } from 'astro:assets'
+import FormattedDate from '@/components/shared/FormattedDate.astro'
+import PostTags from '@/components/blogs/PostTags.astro'
+import Comments from '@/components/blogs/Comments'
+import { Post } from '@/types'
 
-type Props = CollectionEntry<'post'>['data'] & {
-  slug: string;
-};
+interface Props extends Post {}
 
-const { title, category, pubDate, updatedDate, heroImage, tags } = Astro.props;
+const { title, category, publishedDate, updatedDate, heroImage, tags } =
+  Astro.props
 ---
 
-<div class="container mx-auto px-5 md:px-0 w-full md:w-10/12 lg:w-6/12 font-work">
-  <div class="py-5">
-    <a href={`/category/${category}/`} >
+<div
+  class='container mx-auto px-5 md:px-0 w-full md:w-10/12 lg:w-6/12 font-work'
+>
+  <div class='py-5'>
+    <a href={`/category/${category}/`}>
       <div
-        class="w-fit px-2.5 py-1 bg-accent hover:bg-accent/80 text-base-100 text-xs md:text-sm rounded-md mb-2 md:mb-4 font-bold uppercase"
+        class='w-fit px-2.5 py-1 bg-accent hover:bg-accent/80 text-base-100 text-xs md:text-sm rounded-md mb-2 md:mb-4 font-bold uppercase'
       >
         {category}
       </div>
     </a>
-    <h1 
-      class="text-base-content font-semibold text-xl md:text-2xl lg:text-5xl leading-5 md:leading-10"
+    <h1
+      class='text-base-content font-semibold text-xl md:text-2xl lg:text-5xl leading-5 md:leading-10'
     >
       {title}
     </h1>
-    <div class="mt-3 md:mt-6 flex items-center gap-5 text-base-content/60">
-      <p class="text-xs md:text-sm">
+    <div class='mt-3 md:mt-6 flex items-center gap-5 text-base-content/60'>
+      <p class='text-xs md:text-sm'>
         {
           updatedDate && (
             <>
@@ -35,25 +37,25 @@ const { title, category, pubDate, updatedDate, heroImage, tags } = Astro.props;
           )
         }
         {
-          !updatedDate && pubDate && (
+          !updatedDate && publishedDate && (
             <>
-              Published on <FormattedDate date={pubDate} />
+              Published on <FormattedDate date={publishedDate} />
             </>
           )
         }
       </p>
     </div>
   </div>
-  <article class="prose lg:prose-xl mx-auto">
+  <article class='prose lg:prose-xl mx-auto'>
     {
       heroImage && (
-        <img 
-          id="hero-image"
-          width={720} 
-          height={360} 
-          src={heroImage} 
-          alt={title} 
-          class="rounded-xl border-b-8 border-accent"
+        <Image
+          id='hero-image'
+          width={720}
+          height={360}
+          src={heroImage}
+          alt={title}
+          class='rounded-xl border-b-8 border-accent'
         />
       )
     }
@@ -64,8 +66,11 @@ const { title, category, pubDate, updatedDate, heroImage, tags } = Astro.props;
 
   <Comments client:idle />
 
-  <div class="mt-10">
-    <a href="/blog" class="text-base-content/60 hover:text-base-content/80 transition-colors duration-200">
+  <div class='mt-10'>
+    <a
+      href='/blog'
+      class='text-base-content/60 hover:text-base-content/80 transition-colors duration-200'
+    >
       ← Back to blog
     </a>
   </div>
