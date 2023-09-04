@@ -10,7 +10,7 @@ tags:
   - tutorial
 image:
   icon: 'logos:adonisjs-icon'
-  title: 'Installing Adonis JS 5'
+  title: 'Installing AdonisJS v5'
   subtitle: 'Simple Guide'
 ---
 

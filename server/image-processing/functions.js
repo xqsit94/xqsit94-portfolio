@@ -42,14 +42,14 @@ const pickRandomColourFromArray = (colours) => {
 }
 
 /**
- * Generates a gradient from a colour.
- * @param {string} colour The colour to generate the gradient from.
- * @returns {string} The gradient.
+ * Determines the font size for the title.
+ * @param {string} title The title.
+ * @returns {string} The font size.
  */
 const determineFontSize = (title) => {
   if (title.length > 30) return '3rem'
   if (title.length > 24) return '4rem'
-  return '4.5rem'
+  return '4.2rem'
 }
 
 /**

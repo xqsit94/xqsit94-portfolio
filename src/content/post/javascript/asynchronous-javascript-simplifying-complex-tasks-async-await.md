@@ -8,6 +8,10 @@ heroImage: '/images/javascript/asynchronous-javascript-simplifying-complex-tasks
 tags:
   - javascript
   - asynchronous
+image:
+  icon: 'logos:javascript'
+  title: 'Asynchronous JavaScript'
+  subtitle: 'Simplifying Complex Tasks with Async/Await'
 ---
 
 ## Introduction

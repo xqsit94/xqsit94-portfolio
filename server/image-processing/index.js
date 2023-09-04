@@ -36,6 +36,11 @@ markdownFiles.forEach(async ({ folder, file, fullPath }) => {
       console.log('No image found in frontmatter for:', file)
       return
     }
+
+    if (!fs.existsSync(path.join('./public/images', folder))) {
+      fs.mkdirSync(path.join('./public/images', folder))
+    }
+
     console.log('Generating image for:', file)
     await generateImage(
       frontmatter.image.icon || 'logos:typo3-icon',

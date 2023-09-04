@@ -9,6 +9,10 @@ tags:
   - typescript
   - coding-basics
   - tutorial
+image:
+  icon: 'logos:typescript-icon'
+  title: 'Learn Typescript'
+  subtitle: 'Basics - Beginners Tutorial'
 ---
 
 If you're looking to enhance your web development skills, learning Typescript is a great place to start. This powerful superset of JavaScript offers a range of features and benefits that can help you write cleaner, more efficient code.

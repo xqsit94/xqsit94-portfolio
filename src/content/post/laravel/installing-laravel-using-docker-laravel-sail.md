@@ -8,6 +8,10 @@ heroImage: '/images/laravel/installing-laravel-using-docker-laravel-sail.png'
 tags:
   - laravel
   - php
+image:
+  icon: 'logos:laravel'
+  title: 'Installing Laravel'
+  subtitle: 'Using Docker and Laravel Sail'
 ---
 
 ## **What is Laravel Sail?**

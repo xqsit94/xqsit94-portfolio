@@ -77,18 +77,18 @@ const { title, category, publishedDate, updatedDate, heroImage, tags } =
 </div>
 
 <script>
-  // import { $theme } from "~/stores/theme";
-  //
-  // $theme.subscribe((theme) => {
-  //   const heroImage = document.getElementById('hero-image');
-  //   if (theme === 'light') {
-  //     if (heroImage) {
-  //       heroImage.src = heroImage.src.replace(/(\.[\w\d_-]+)$/i, '-light$1');
-  //     }
-  //   } else {
-  //     if (heroImage) {
-  //       heroImage.src = heroImage.src.replace(/-light(\.[\w\d_-]+)$/i, '$1');
-  //     }
-  //   }
-  // });
+  import { $theme } from '@/stores/theme'
+
+  $theme.subscribe((theme) => {
+    const heroImage = document.getElementById('hero-image')
+    if (theme === 'light') {
+      if (heroImage) {
+        heroImage.src = heroImage.src.replace(/(\.[\w\d_-]+)$/i, '-light$1')
+      }
+    } else {
+      if (heroImage) {
+        heroImage.src = heroImage.src.replace(/-light(\.[\w\d_-]+)$/i, '$1')
+      }
+    }
+  })
 </script>

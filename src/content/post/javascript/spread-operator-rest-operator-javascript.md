@@ -9,6 +9,10 @@ tags:
   - javascript
   - spread-operator
   - rest-operator
+image:
+  icon: 'logos:javascript'
+  title: 'Spread Operator and Rest Operator'
+  subtitle: 'Compare Spread Operator and Rest Operator in Javascript'
 ---
 
 ## Introduction:

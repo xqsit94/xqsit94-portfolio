@@ -8,6 +8,10 @@ heroImage: '/images/javascript/asynchronous-javascript-promises-async-await-call
 tags:
   - javascript
   - asynchronous
+image:
+  icon: 'logos:javascript'
+  title: 'Asynchronous JavaScript'
+  subtitle: 'Promises, Async/Await, and Callbacks'
 ---
 
 ## Introduction

@@ -8,7 +8,7 @@ const generateHtml = (mainColour, icon, category, title, subTitle) => {
   const titleBG = tinycolor(mainColour).setAlpha(0.6).toHexString()
   const titleText = tinycolor(titleBG).isLight() ? '#000000' : '#ffffff'
 
-  const titleFontSize = determineFontSize(coverTitle)
+  const titleFontSize = determineFontSize(title)
 
   // generate subtitle color
   const subtitleBG = tinycolor(mainColour).darken(10).toString()
