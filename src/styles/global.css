@@ -19,3 +19,31 @@
   min-height: 100%;
   overflow-x: hidden;
 }
+
+:root {
+  --astro-code-color-text: #a6accd; /* Basic Text */
+  --astro-code-color-background: #292d3e; /* Background */
+  --astro-code-token-constant: #ff5370; /* Constants like numbers */
+  --astro-code-token-string: #c3e88d; /* String Text */
+  --astro-code-token-comment: #676e95; /* Comments */
+  --astro-code-token-keyword: #c792ea; /* Keywords like 'if', 'else' */
+  --astro-code-token-parameter: #ffcb6b; /* Parameters in function */
+  --astro-code-token-function: #82aaff; /* Function names */
+  --astro-code-token-string-expression: #c3e88d; /* String within expressions */
+  --astro-code-token-punctuation: #89ddff; /* Punctuation like , . ; */
+  --astro-code-token-link: #80cbc4; /* Links if any */
+}
+
+:root[data-theme='light'] {
+  --astro-code-color-text: #24292e; /* Basic Text */
+  --astro-code-color-background: #fff1ed; /* Background */
+  --astro-code-token-constant: #005cc5; /* Constants like numbers */
+  --astro-code-token-string: #032f62; /* String Text */
+  --astro-code-token-comment: #6a737d; /* Comments */
+  --astro-code-token-keyword: #d73a49; /* Keywords like 'if', 'else' */
+  --astro-code-token-parameter: #6f42c1; /* Parameters in function */
+  --astro-code-token-function: #005cc5; /* Function names */
+  --astro-code-token-string-expression: #032f62; /* String within expressions */
+  --astro-code-token-punctuation: #24292e; /* Punctuation like , . ; */
+  --astro-code-token-link: #005cc5; /* Links if any */
+}
