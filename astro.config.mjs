@@ -12,7 +12,6 @@ import icon from 'astro-icon'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
 // https://astro.build/config
 export default defineConfig({
   site: SITE.origin,
@@ -28,6 +27,12 @@ export default defineConfig({
       devicon: ['*'],
     },
   })],
+  markdown: {
+    syntaxHighlight: "shiki",
+    shikiConfig: {
+      theme: "css-variables"
+    }
+  },
   vite: {
     resolve: {
       alias: {
