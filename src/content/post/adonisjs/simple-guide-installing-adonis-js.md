@@ -8,6 +8,10 @@ heroImage: '/images/adonisjs/simple-guide-installing-adonis-js.png'
 tags:
   - adonisjs
   - tutorial
+image:
+  icon: 'logos:adonisjs-icon'
+  title: 'Installing Adonis JS 5'
+  subtitle: 'Simple Guide'
 ---
 
 ## Introduction
