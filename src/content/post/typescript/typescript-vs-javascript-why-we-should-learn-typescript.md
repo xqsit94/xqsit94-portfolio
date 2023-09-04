@@ -8,6 +8,10 @@ heroImage: '/images/typescript/typescript-vs-javascript-why-we-should-learn-type
 tags:
   - typescript
   - coding-basics
+image:
+  icon: 'logos:typescript-icon'
+  title: 'Typescript vs Javascript'
+  subtitle: 'Why we should learn Typescript'
 ---
 
 Javascript has been the go-to language for web developers for a long time. However, with the rise of complex web applications, there has been a growing need for a more structured and robust language. This is where Typescript comes in.

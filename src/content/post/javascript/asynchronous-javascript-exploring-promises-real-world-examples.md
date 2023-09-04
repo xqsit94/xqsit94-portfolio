@@ -8,6 +8,10 @@ heroImage: '/images/javascript/asynchronous-javascript-exploring-promises-real-w
 tags:
   - javascript
   - asynchronous
+image:
+  icon: 'logos:javascript'
+  title: 'Asynchronous JavaScript'
+  subtitle: 'Exploring Promises with Real-World Examples'
 ---
 
 ## Introduction

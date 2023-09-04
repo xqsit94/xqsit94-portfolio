@@ -7,6 +7,10 @@ updatedDate: 'Jul 10 2023'
 heroImage: '/images/javascript/javascript-es5-vs-es6-compare-and-learn.png'
 tags:
   - javascript
+image:
+  icon: 'logos:javascript'
+  title: 'ES5 vs ES6'
+  subtitle: 'Compare and Learn'
 ---
 
 ## Introduction

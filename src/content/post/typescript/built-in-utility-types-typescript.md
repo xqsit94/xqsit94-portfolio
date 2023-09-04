@@ -7,6 +7,10 @@ updatedDate: 'Jul 23 2023'
 heroImage: '/images/typescript/built-in-utility-types-typescript.png'
 tags:
   - typescript
+image:
+  icon: 'logos:typescript-icon'
+  title: 'Typescript'
+  subtitle: 'Built-in Utility Types'
 ---
 
 ## Introduction

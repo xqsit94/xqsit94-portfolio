@@ -9,6 +9,10 @@ tags:
   - laravel
   - getting-started
   - php
+image:
+  icon: 'logos:laravel'
+  title: 'Why Laravel?'
+  subtitle: 'The Best PHP Framework for Modern Web Development'
 ---
 
 ## Introduction
