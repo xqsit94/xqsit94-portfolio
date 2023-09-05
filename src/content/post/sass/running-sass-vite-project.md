@@ -26,7 +26,7 @@ Syntactically Awesome Stylesheets (SASS) is a CSS preprocessor that lets you use
 
 Vite is a build tool and development server that aims to be faster and leaner than solutions like Webpack. It offers features like hot module replacement and optimizes your workflow for production with minimal configuration.
 
-### Step 1: \***\*Setting Up a Vite Project\*\***
+### Step 1: Setting Up a Vite Project
 
 I’m going to create a new vite project using template vanilla typescript. If you prefer to use some other framework you can change the template parameter
 
