@@ -7,6 +7,8 @@ export const SITE = {
   basePathname: '/',
   trailingSlash: true,
 
+  author: 'xqsit94',
+
   googleAnalyticsId: 'G-4RT0BMTZHD'
 }
 

@@ -28,14 +28,14 @@
   import { $theme } from '@/stores/theme'
 
   $theme.subscribe((theme) => {
-    const svgGroup = document.getElementById('svgGroup');
+    const svgGroup = document.getElementById('svgGroup')
 
     if (theme === 'light') {
-      svgGroup.style.fill = '#e74d3c';
-      svgGroup.style.stroke = '#FFFFFF';
+      svgGroup.style.fill = '#e74d3c'
+      svgGroup.style.stroke = '#FFFFFF'
     } else {
-      svgGroup.style.fill = '#F2B807';
-      svgGroup.style.stroke = '#000000';
+      svgGroup.style.fill = '#F2B807'
+      svgGroup.style.stroke = '#000000'
     }
   })
 </script>

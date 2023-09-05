@@ -1,26 +1,38 @@
-import rss, { type RSSOptions } from '@astrojs/rss'
-import { getCollection } from 'astro:content'
+import { getRssString } from '@astrojs/rss'
+import { getPermalink } from '@/utils/functions.ts'
 import { SITE, BLOG } from '@/config.mjs'
+import { fetchPosts } from '@/utils/blogs.ts'
 
-export async function get(context: RSSOptions) {
-  console.log(context, 'context')
+export const GET = async () => {
   if (BLOG.disabled) {
-    return {
+    return new Response(null, {
       status: 404,
       statusText: 'Not found'
-    }
+    })
   }
 
-  const posts = await getCollection('post')
-  return rss({
-    title: SITE.title,
-    description: SITE.description,
-    site: context.site,
+  const posts = await fetchPosts()
+
+  const rss = await getRssString({
+    title: `${SITE.title}`,
+    description: SITE.description || '',
+    site: SITE.origin,
+
     items: posts.map((post) => ({
-      ...post.data,
-      pubDate: post.data.publishedDate,
-      link: `/${post.slug}`
+      link: getPermalink(post.permalink, 'post'),
+      title: post.title,
+      description: post.description,
+      pubDate: post.publishedDate!,
+      categories: [post.category!],
+      author: SITE.author
     })),
+
     trailingSlash: SITE.trailingSlash
+  })
+
+  return new Response(rss, {
+    headers: {
+      'Content-Type': 'application/xml'
+    }
   })
 }
