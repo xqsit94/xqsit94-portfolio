@@ -9,6 +9,7 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import robotsTxt from 'astro-robots-txt'
 import icon from 'astro-icon'
+import rehypePrettyCode from 'rehype-pretty-code';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -28,10 +29,10 @@ export default defineConfig({
     },
   })],
   markdown: {
-    syntaxHighlight: "shiki",
-    shikiConfig: {
-      theme: "css-variables"
-    }
+    syntaxHighlight: false,
+    rehypePlugins: [
+      [rehypePrettyCode, { theme: 'css-variables' }]
+    ],
   },
   vite: {
     resolve: {

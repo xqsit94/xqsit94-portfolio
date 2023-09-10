@@ -56,9 +56,7 @@ pnpm add -D sass vite-plugin-sass
 
 ### Step 3: Create a `vite.config.ts` file in the root of your project and add the following configuration:
 
-```bash
-// vite.config.ts
-
+```bash title="vite.config.ts"
 import { defineConfig } from 'vite';
 import sass from 'vite-plugin-sass';
 
@@ -74,9 +72,7 @@ This configuration sets up the `vite-plugin-sass` plugin to compile Sass files
 - First delete the `style.css` file which is already present in your vite project.
 - Create a file name `style.scss` in your project and add following scss code.
 
-```scss
-// style.scss
-
+```scss title="style.scss"
 $font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 $color-scheme: light dark;
 
@@ -183,7 +179,7 @@ button {
 
 Now import the style.scss in your root project file, in my case it is `main.ts`
 
-```bash
+```bash title="main.ts"
 import './style.scss'
 ```
 
@@ -206,9 +202,7 @@ This will start the Vite development server and compile your Sass code. Vite's H
 
 **Note:** If you are using a different file extension for your Sass files, you can configure the `vite-plugin-sass` plugin to use that extension by passing an options object to the plugin. For example, if you are using `.sass` files, you can configure the plugin like this:
 
-```typescript
-// vite.config.ts
-
+```typescript title="vite.config.ts"
 export default defineConfig({
   plugins: [sass({ sassOptions: { indentedSyntax: true } })]
 })
