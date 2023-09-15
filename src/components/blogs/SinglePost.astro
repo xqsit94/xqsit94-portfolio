@@ -4,10 +4,11 @@ import FormattedDate from '@/components/shared/FormattedDate.astro'
 import PostTags from '@/components/blogs/PostTags.astro'
 import Comments from '@/components/blogs/Comments'
 import { Post } from '@/types'
+import RelatedPosts from './RelatedPosts.astro'
 
 interface Props extends Post {}
 
-const { title, category, publishedDate, updatedDate, heroImage, tags } =
+const { id, title, category, publishedDate, updatedDate, heroImage, tags } =
   Astro.props
 ---
 
@@ -61,6 +62,8 @@ const { title, category, publishedDate, updatedDate, heroImage, tags } =
     }
     <slot />
   </article>
+
+  <RelatedPosts id={id} tags={tags} />
 
   <PostTags tags={tags} />
 
