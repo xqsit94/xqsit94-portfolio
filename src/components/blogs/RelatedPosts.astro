@@ -1,0 +1,26 @@
+---
+import type { Post } from '@/types'
+import { findRelatedPostsByTags } from '@/utils/blogs'
+
+export interface Props {
+  id: Post['id']
+  tags: Post['tags']
+}
+
+const { id, tags } = Astro.props
+
+const relatedPosts = await findRelatedPostsByTags(tags, id)
+---
+
+<div class='prose mt-10'>
+  {relatedPosts.length > 0 && <h2 class='font-semibold'>Also Read</h2>}
+  {
+    relatedPosts.map((post) => (
+      <ul>
+        <li>
+          <a href={`/${post.slug}/`}>{post.title}</a>
+        </li>
+      </ul>
+    ))
+  }
+</div>

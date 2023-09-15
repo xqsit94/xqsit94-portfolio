@@ -201,3 +201,27 @@ export const findCategories = async (): Promise<Array<string>> => {
   }, [])
   return [...(new Set(categories) as any)]
 }
+
+/**
+ * Find related posts by tags
+ */
+export const findRelatedPostsByTags = async (
+  tags: string[],
+  excludePostId: string,
+  limit = 2
+): Promise<Array<Post>> => {
+  const posts = await fetchPosts()
+
+  const filteredPosts = posts.filter((post: Post) => {
+    if (post.id === excludePostId) {
+      return false
+    }
+
+    if (post.tags && Array.isArray(post.tags)) {
+      return post.tags.some((tag: string) => tags.includes(tag))
+    }
+    return false
+  })
+
+  return filteredPosts.slice(0, limit)
+}
