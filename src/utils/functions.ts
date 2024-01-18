@@ -1,5 +1,5 @@
-import slugify from 'limax'
 import { BLOG, SITE } from '@/config.mjs'
+import slugify from 'limax'
 
 const BASE_PATHNAME = SITE.basePathname
 

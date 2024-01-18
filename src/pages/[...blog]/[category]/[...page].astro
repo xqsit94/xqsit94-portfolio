@@ -1,9 +1,9 @@
 ---
-import Layout from '@/layouts/DefaultLayout.astro'
+import Pagination from '@/components/blogs/Pagination.astro'
 import PostCard from '@/components/blogs/PostCard.astro'
 import { BLOG, SITE } from '@/config.mjs'
+import Layout from '@/layouts/DefaultLayout.astro'
 import { fetchPosts } from '@/utils/blogs'
-import Pagination from '@/components/blogs/Pagination.astro'
 import { CATEGORY_BASE } from '@/utils/functions'
 
 export async function getStaticPaths({ paginate }: any) {

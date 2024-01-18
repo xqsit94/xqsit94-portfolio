@@ -2,9 +2,10 @@
 import SinglePost from '@/components/blogs/SinglePost.astro'
 import { BLOG } from '@/config.mjs'
 import Layout from '@/layouts/PageLayout.astro'
+import type { MetaSEO } from '@/types'
 import { fetchPosts } from '@/utils/blogs'
-import { findImage } from '@/utils/images'
 import { getCanonical, getPermalink } from '@/utils/functions'
+import { findImage } from '@/utils/images'
 
 export async function getStaticPaths() {
   if (BLOG?.disabled || BLOG?.post?.disabled) return []
@@ -19,11 +20,11 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 const url = getCanonical(getPermalink(post.permalink, 'post'))
 
-const meta = {
+const meta: MetaSEO = {
   title: post.title,
   description: post.description,
   canonical: post.canonical || url,
-  image: await findImage(post.image),
+  image: (await findImage(post.heroImage)) as string,
   noindex: BLOG?.post?.noindex,
   ogType: 'article'
 }
@@ -34,7 +35,6 @@ const meta = {
     {
       post.Content ? (
         <>
-          {/* @ts-ignore */}
           <post.Content />
         </>
       ) : (

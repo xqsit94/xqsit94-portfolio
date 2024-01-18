@@ -1,10 +1,10 @@
 ---
-import { AstroSeo } from '@astrolib/seo'
-import type { MetaSEO } from '@/types'
+import GoogleAnalytics from '@/components/extenstions/GoogleAnalytics.astro'
 import { SITE } from '@/config.mjs'
 import '@/styles/global.css'
-import { getCanonical, getAsset } from '@/utils/functions'
-import GoogleAnalytics from '@/components/extenstions/GoogleAnalytics.astro'
+import type { MetaSEO } from '@/types'
+import { getAsset, getCanonical } from '@/utils/functions'
+import { AstroSeo } from '@astrolib/seo'
 
 export interface Props extends MetaSEO {
   title: string

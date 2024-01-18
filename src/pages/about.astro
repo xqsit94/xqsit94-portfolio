@@ -1,7 +1,7 @@
 ---
-import type { MetaSEO } from '@/types'
-import Layout from '@/layouts/PageLayout.astro'
 import SinglePage from '@/components/blogs/SinglePage.astro'
+import Layout from '@/layouts/PageLayout.astro'
+import type { MetaSEO } from '@/types'
 
 const meta: MetaSEO = {
   title: 'About Me - Manikandan B (xqsit94)',
@@ -12,14 +12,7 @@ const meta: MetaSEO = {
 ---
 
 <Layout {meta}>
-  <SinglePage
-    title={meta.title!}
-    category='About'
-    description={meta.description!}
-    pubDate={new Date('June 28 2023')}
-    updatedDate={new Date('June 08 2023')}
-    heroImage={meta.image!}
-  >
+  <SinglePage heroImage={meta.image!}>
     <p>Welcome to LIFEOFDEV!</p>
     <p>
       Hey there, I'm thrilled to have you visit my blog. My name is Manikandan,
