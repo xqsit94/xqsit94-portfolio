@@ -28,7 +28,7 @@
   import { $theme } from '@/stores/theme'
 
   $theme.subscribe((theme) => {
-    const svgGroup = document.getElementById('svgGroup')
+    const svgGroup = document.getElementById('svgGroup') as HTMLElement
 
     if (theme === 'light') {
       svgGroup.style.fill = '#e74d3c'

@@ -1,7 +1,7 @@
-import { getRssString } from '@astrojs/rss'
-import { getPermalink } from '@/utils/functions.ts'
-import { SITE, BLOG } from '@/config.mjs'
+import { BLOG, SITE } from '@/config.mjs'
 import { fetchPosts } from '@/utils/blogs.ts'
+import { getPermalink } from '@/utils/functions.ts'
+import { getRssString } from '@astrojs/rss'
 
 export const GET = async () => {
   if (BLOG.disabled) {

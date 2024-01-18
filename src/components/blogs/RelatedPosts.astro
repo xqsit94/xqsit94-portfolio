@@ -9,7 +9,7 @@ export interface Props {
 
 const { id, tags } = Astro.props
 
-const relatedPosts = await findRelatedPostsByTags(tags, id)
+const relatedPosts = await findRelatedPostsByTags(tags!, id)
 ---
 
 <div class='prose mt-10'>

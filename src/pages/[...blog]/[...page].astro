@@ -1,12 +1,12 @@
 ---
-import Layout from '@/layouts/DefaultLayout.astro'
+import Pagination from '@/components/blogs/Pagination.astro'
 import PostCard from '@/components/blogs/PostCard.astro'
-import type { GetStaticPathsOptions } from 'astro'
 import { BLOG, SITE } from '@/config.mjs'
+import Layout from '@/layouts/DefaultLayout.astro'
+import { type Post } from '@/types'
 import { fetchPosts } from '@/utils/blogs'
 import { BLOG_BASE } from '@/utils/functions'
-import Pagination from '@/components/blogs/Pagination.astro'
-import { Post } from '../../types'
+import type { GetStaticPathsOptions } from 'astro'
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   if (BLOG?.disabled || BLOG?.list?.disabled) return []
@@ -43,9 +43,9 @@ const meta = {
         {
           page.data.map((post: Post) => (
             <PostCard
-              category={post.category}
+              category={post.category!}
               title={post.title}
-              description={post.description}
+              description={post.description!}
               date={post.publishedDate}
               image={post.heroImage}
               slug={post.slug}
@@ -55,7 +55,7 @@ const meta = {
       </div>
     </section>
     <section class='p-5'>
-      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+      <Pagination prevUrl={page.url.prev!} nextUrl={page.url.next!} />
     </section>
   </div>
 </Layout>
