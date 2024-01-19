@@ -24,7 +24,15 @@ export const GET = async () => {
       description: post.description,
       pubDate: post.publishedDate!,
       categories: [post.category!],
-      author: SITE.author
+      author: SITE.author,
+      customData: `<media:content
+          xmlns:media="http://search.yahoo.com/mrss/"
+          type="image/png"
+          width="720"
+          height="360"
+          medium="image"
+          url="${SITE.origin + post.heroImage}" />
+      `,
     })),
 
     trailingSlash: SITE.trailingSlash
