@@ -1,7 +1,7 @@
-import type { CollectionEntry } from 'astro:content'
-import { getCollection } from 'astro:content'
 import type { Post } from '@/types'
 import { cleanSlug, POST_PERMALINK_PATTERN, trimSlash } from '@/utils/functions'
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
 
 /**
  * Generate permalink from post data

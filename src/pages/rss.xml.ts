@@ -1,7 +1,7 @@
-import { getRssString } from '@astrojs/rss'
-import { getPermalink } from '@/utils/functions.ts'
-import { SITE, BLOG } from '@/config.mjs'
+import { BLOG, SITE } from '@/config.mjs'
 import { fetchPosts } from '@/utils/blogs.ts'
+import { getPermalink } from '@/utils/functions.ts'
+import { getRssString } from '@astrojs/rss'
 
 export const GET = async () => {
   if (BLOG.disabled) {
@@ -24,7 +24,15 @@ export const GET = async () => {
       description: post.description,
       pubDate: post.publishedDate!,
       categories: [post.category!],
-      author: SITE.author
+      author: SITE.author,
+      customData: `<media:content
+          xmlns:media="http://search.yahoo.com/mrss/"
+          type="image/png"
+          width="720"
+          height="360"
+          medium="image"
+          url="${SITE.origin + post.heroImage}" />
+      `,
     })),
 
     trailingSlash: SITE.trailingSlash

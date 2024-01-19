@@ -43,8 +43,10 @@ export const findImage = async (imagePath?: string) => {
     return null
   }
 
-  // @ts-ignore
-  return typeof images[key] === 'function'
-    ? (await images[key]())['default']
-    : null
+  if (typeof images[key] === 'function') {
+    const image = (await images[key]()) as Record<string, unknown>
+    return image['default']
+  } else {
+    return null
+  }
 }

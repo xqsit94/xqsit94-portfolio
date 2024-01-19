@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets'
 import FormattedDate from '@/components/shared/FormattedDate.astro'
+import { Image } from 'astro:assets'
 
 export interface Props {
   category: string
@@ -67,14 +67,14 @@ const {
   import { $theme } from '@/stores/theme'
 
   $theme.subscribe((theme) => {
-    if (theme === 'light') {
-      for (const img of document.querySelectorAll('a img')) {
-        img.src = img.src.replace(/(\.[\w\d_-]+)$/i, '-light$1')
-      }
-    } else {
-      for (const img of document.querySelectorAll('a img')) {
-        img.src = img.src.replace(/-light(\.[\w\d_-]+)$/i, '$1')
-      }
+    const images = document.querySelectorAll(
+      'a img'
+    ) as NodeListOf<HTMLImageElement>
+    for (const img of images) {
+      img.src =
+        theme === 'light'
+          ? img.src.replace(/(\.[\w\d_-]+)$/i, '-light$1')
+          : img.src.replace(/-light(\.[\w\d_-]+)$/i, '$1')
     }
   })
 </script>

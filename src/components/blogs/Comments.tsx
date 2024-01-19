@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import Giscus, { type GiscusProps } from '@giscus/react'
 import { BLOG } from '@/config.mjs'
 import { $theme } from '@/stores/theme'
+import Giscus, { type GiscusProps } from '@giscus/react'
 import { useStore } from '@nanostores/react'
+import { useEffect, useState } from 'react'
 
 const id = 'inject-comments'
 
