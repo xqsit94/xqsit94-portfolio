@@ -21,32 +21,56 @@
 }
 
 :root {
-  --shiki-color-text: #a6accd; /* Basic Text */
-  --shiki-color-background: #292d3e; /* Background */
-  --shiki-token-constant: #ff5370; /* Constants like numbers */
-  --shiki-token-string: #c3e88d; /* String Text */
-  --shiki-token-comment: #676e95; /* Comments */
-  --shiki-token-keyword: #c792ea; /* Keywords like 'if', 'else' */
-  --shiki-token-parameter: #ffcb6b; /* Parameters in function */
-  --shiki-token-function: #82aaff; /* Function names */
-  --shiki-token-string-expression: #c3e88d; /* String within expressions */
-  --shiki-token-punctuation: #89ddff; /* Punctuation like , . ; */
-  --shiki-token-link: #80cbc4; /* Links if any */
+  /* Basic Text */
+  --shiki-color-text: #a6accd;
+  /* Background */
+  --shiki-color-background: #292d3e;
+  /* Constants like numbers */
+  --shiki-token-constant: #ff5370;
+  /* String Text */
+  --shiki-token-string: #c3e88d;
+  /* Comments */
+  --shiki-token-comment: #676e95;
+  /* Keywords like 'if', 'else' */
+  --shiki-token-keyword: #c792ea;
+  /* Parameters in function */
+  --shiki-token-parameter: #ffcb6b;
+  /* Function names */
+  --shiki-token-function: #82aaff;
+  /* String within expressions */
+  --shiki-token-string-expression: #c3e88d;
+  /* Punctuation like , . ; */
+  --shiki-token-punctuation: #89ddff;
+  /* Links if any */
+  --shiki-token-link: #80cbc4;
+  /* Title background */
   --shiki-title-background: #202338;
 }
 
 :root[data-theme='light'] {
-  --shiki-color-text: #24292e; /* Basic Text */
-  --shiki-color-background: #fff7f3; /* Background */
-  --shiki-token-constant: #005cc5; /* Constants like numbers */
-  --shiki-token-string: #032f62; /* String Text */
-  --shiki-token-comment: #6a737d; /* Comments */
-  --shiki-token-keyword: #d73a49; /* Keywords like 'if', 'else' */
-  --shiki-token-parameter: #6f42c1; /* Parameters in function */
-  --shiki-token-function: #005cc5; /* Function names */
-  --shiki-token-string-expression: #032f62; /* String within expressions */
-  --shiki-token-punctuation: #24292e; /* Punctuation like , . ; */
-  --shiki-token-link: #005cc5; /* Links if any */
+  /* Basic Text */
+  --shiki-color-text: #24292e;
+  /* Background */
+  --shiki-color-background: #fff7f3;
+  /* Constants like numbers */
+  --shiki-token-constant: #005cc5;
+  /* String Text */
+  --shiki-token-string: #032f62;
+  /* Comments */
+  --shiki-token-comment: #6a737d;
+  /* Keywords like 'if', 'else' */
+  --shiki-token-keyword: #d73a49;
+  /* Parameters in function */
+  --shiki-token-parameter: #6f42c1;
+  /* Function names */
+  --shiki-token-function: #005cc5;
+  /* String within expressions */
+  --shiki-token-string-expression: #032f62;
+  /* Punctuation like , . ; */
+  --shiki-token-punctuation: #24292e;
+  /* Links if any */
+  --shiki-token-link: #005cc5;
+  /* Title background */
   --shiki-title-background: #fcece5;
 }
 
