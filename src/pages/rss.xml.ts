@@ -32,7 +32,7 @@ export const GET = async () => {
           height="360"
           medium="image"
           url="${SITE.origin + post.heroImage}" />
-      `,
+      `
     })),
 
     trailingSlash: SITE.trailingSlash
