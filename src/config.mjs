@@ -9,7 +9,9 @@ export const SITE = {
 
   author: 'xqsit94',
 
-  googleAnalyticsId: 'G-4RT0BMTZHD'
+  googleAnalyticsId: 'G-4RT0BMTZHD',
+
+  adsenseClient: 'ca-pub-6367184538164263'
 }
 
 export const BLOG = {

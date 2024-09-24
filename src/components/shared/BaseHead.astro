@@ -5,6 +5,7 @@ import '@/styles/global.css'
 import type { MetaSEO } from '@/types'
 import { getAsset, getCanonical } from '@/utils/functions'
 import { AstroSeo } from '@astrolib/seo'
+import GoogleAdsense from '../extenstions/GoogleAdsense.astro'
 
 export interface Props extends MetaSEO {
   title: string
@@ -36,6 +37,9 @@ const {
       <GoogleAnalytics id={String(SITE.googleAnalyticsId)} />
     )
   }
+
+  <!-- Google Adsense -->
+  {SITE.adsenseClient && <GoogleAdsense client={String(SITE.adsenseClient)} />}
 
   <!-- Global Metadata -->
   <meta charset='utf-8' />
