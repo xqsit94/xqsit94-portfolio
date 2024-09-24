@@ -1,0 +1,12 @@
+---
+export interface Props {
+  client: string
+}
+
+const { client } = Astro.props
+
+const adsenseUrl = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}`
+---
+
+<script type='text/partytown' async src={adsenseUrl} crossorigin='anonymous'
+></script>
