@@ -1,5 +1,7 @@
 ---
 import { Slider } from '@/components/home/Slider'
+
+const showContact = false
 ---
 
 <section class='h-screen flex justify-center items-center'>
@@ -23,11 +25,18 @@ import { Slider } from '@/components/home/Slider'
           >
             with a passion for crafting exceptional web experience.
           </p>
-          <div class='mt-10 flex md:flex-row flex-col gap-6 items-center'>
-            <button class='btn btn-outline btn-accent btn-wide'>Write Me</button
-            >
-            <button class='btn btn-outline btn-info btn-wide'>Resume</button>
-          </div>
+          {
+            showContact && (
+              <div class='mt-10 flex md:flex-row flex-col gap-6 items-center'>
+                <button class='btn btn-outline btn-accent btn-wide'>
+                  Write Me
+                </button>
+                <button class='btn btn-outline btn-info btn-wide'>
+                  Resume
+                </button>
+              </div>
+            )
+          }
         </div>
         <div class='h-[40vh] lg:h-auto w-full lg:w-2/4'>
           <Slider
