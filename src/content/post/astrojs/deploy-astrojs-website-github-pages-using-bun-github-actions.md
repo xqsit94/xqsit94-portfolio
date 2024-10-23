@@ -1,7 +1,7 @@
 ---
 title: 'Deploy Astro.js Website to GitHub Pages using BUN and GitHub Actions'
 category: 'AstroJS'
-description: In this blog post, we'll guide you through the process of deploying an Astro.js website to GitHub Pages using BUN as your package manager and GitHub Actions for automation.
+description: 'In this blog post, we will guide you through the process of deploying an Astro.js website to GitHub Pages using BUN as your package manager and GitHub Actions for automation.'
 publishedDate: 'Sep 12 2023'
 updatedDate: 'Sep 12 2023'
 heroImage: '/images/astrojs/deploy-astrojs-website-github-pages-using-bun-github-actions.png'
